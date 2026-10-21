@@ -25,7 +25,7 @@ Runs name the picks they inverted in `run.yml` (`picks: ...`). Checkerboard runs
 | `synthetic` | DAS + BB | P, S | In use | Eikonal travel times through the checkerboard model for the 400 catalog events |
 | `phasenet-das-gradient` | DAS | P, S | Testing | PhaseNet-DAS run on the spatial gradient of the data, which picked better than the raw data |
 | `ensemble-denoised` | DAS | P, S | Testing | Denoise-then-pick ensemble workflow ([Picking](../picking/index.qmd)) |
-| `alex-das` | DAS | P, S | Outdated | Alex's earlier DAS picks; quality categorized in the pick-quality sheet |
+| `earlier-das` | DAS | P, S | Outdated | Earlier DAS picks; quality categorized in the pick-quality sheet |
 | `phasenet-bb`, `aec-bb` | BB | P, S | Testing | Broadband picks from PhaseNet and AEC |
 | `final` | DAS + BB | P, S | Not yet | Final pick set for the field-data inversion |
 

@@ -1,6 +1,7 @@
 ---
 title: "Literature"
 subtitle: "Papers grouped by how they're used in this project, with a note on why each matters."
+suppress-bibliography: true
 ---
 
 Citations come from [`references.bib`](https://github.com/ajm-glitch/akdas-site/blob/main/literature/references.bib). To add a paper, paste its BibTeX entry there (Google Scholar → Cite → BibTeX) and add a short entry below using its key. The same keys work in the manuscript.
@@ -46,7 +47,7 @@ Citations come from [`references.bib`](https://github.com/ajm-glitch/akdas-site/
 ::: {.ak-paper}
 **@nayak2020** [To read]{.pill .next}
 
-[3D Alaska models from joint body- and surface-wave tomography; likely the model Alex used for relocation, and a reference for the 3D starting model. Confirm with Alex.]{.why}
+[3D Alaska models from joint body- and surface-wave tomography; possibly the model used for event relocation, and a reference for the 3D starting model.]{.why}
 
 [Alaska]{.ak-tag} [Velocity model]{.ak-tag}
 :::
@@ -83,9 +84,4 @@ Citations come from [`references.bib`](https://github.com/ajm-glitch/akdas-site/
 [A review of sensitivity tests (checkerboards, spikes, structural tests) and how to interpret them.]{.why}
 
 [Resolution]{.ak-tag}
-:::
-
-## References
-
-::: {#refs}
 :::

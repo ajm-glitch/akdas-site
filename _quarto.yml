@@ -41,9 +41,7 @@ csl: assets/agu.csl
 
 format:
   html:
-    theme:
-      light: [cosmo, assets/theme.scss]
-      dark: [cosmo, assets/theme.scss, assets/theme-dark.scss]
+    theme: [cosmo, assets/theme.scss]
     toc: true
     toc-depth: 2
     html-math-method: katex

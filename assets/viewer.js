@@ -132,7 +132,7 @@
         panels.push(c.slices[d] ? [c.slices[d], `${esc(c.title)} at ${d} km`] : [null, `${esc(c.title)}: no slice at ${d} km`]);
       }
       return panels.map(([src, cap]) => `<figure class="akv-fig">${src
-        ? `<a href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="${esc(cap)}"></a>`
+        ? `<a href="${src}" class="akv-zoom" data-caption="${esc(cap)}"><img src="${src}" alt="${esc(cap)}"></a>`
         : `<div class="akv-missing">${esc(cap)}</div>`}<figcaption>${cap}</figcaption></figure>`).join("");
     }
 
@@ -166,7 +166,6 @@
             <input id="akv-depth-${mode}" type="range" min="0" max="${r.depths.length - 1}" step="1" value="${i}" ${r.depths.length < 2 ? "disabled" : ""}>
             ${others.length ? `<label class="akv-cmp">Compare with <select id="akv-cmp-${mode}"><option value="">none</option>${others.map((o) => `<option value="${esc(o.id)}" ${o.id === state.cmp ? "selected" : ""}>${esc(o.title || o.id)}</option>`).join("")}</select></label>` : ""}
           </div>
-          <div class="akv-ticks">${r.depths.map((d) => `<button data-d="${d}" class="${d === state.depth ? "on" : ""}">${d}</button>`).join("")}</div>
         </div>
         <div class="akv-slices"></div>`;
         if (r.metrics) h += `<div class="akv-metrics-wrap"></div>`;
@@ -179,7 +178,7 @@
           ${r.notes ? `<div class="akv-notes">${esc(r.notes).replace(/\n\n/g, "<br><br>")}</div>` : ""}</div>`;
       }
       if (r.other && r.other.length) {
-        h += `<h3>Other figures</h3><div class="akv-other">${r.other.map((o) => `<figure class="akv-fig"><a href="${o.src}" target="_blank" rel="noopener"><img src="${o.src}" alt="${esc(o.caption)}" loading="lazy"></a><figcaption>${esc(o.caption)}</figcaption></figure>`).join("")}</div>`;
+        h += `<h3>Other figures</h3><div class="akv-other">${r.other.map((o) => `<figure class="akv-fig"><a href="${o.src}" class="akv-zoom" data-caption="${esc(o.caption)}"><img src="${o.src}" alt="${esc(o.caption)}" loading="lazy"></a><figcaption>${esc(o.caption)}</figcaption></figure>`).join("")}</div>`;
       }
       $d.innerHTML = h;
       renderSlices();
@@ -188,12 +187,10 @@
       const setDepth = (d) => {
         state.depth = d;
         if (range) range.value = r.depths.indexOf(d);
-        $d.querySelectorAll(".akv-ticks button").forEach((b) => b.classList.toggle("on", Number(b.dataset.d) === d));
         renderSlices();
       };
       if (range) {
         range.oninput = () => setDepth(r.depths[Number(range.value)]);
-        $d.querySelectorAll(".akv-ticks button").forEach((b) => (b.onclick = () => setDepth(Number(b.dataset.d))));
         const play = $d.querySelector(".akv-play");
         play.onclick = () => {
           if (state.playing) { clearInterval(state.playing); state.playing = null; play.textContent = "▶"; return; }
@@ -223,12 +220,35 @@
       .catch(() => { $d.innerHTML = `<div class="akv-missing akv-missing-lg">Could not load ${esc(el.dataset.src)}. Preview the site with <code>quarto preview</code> rather than opening the HTML file directly.</div>`; });
 
     document.addEventListener("keydown", (e) => {
-      if (!state.cur || ["INPUT", "SELECT", "TEXTAREA"].includes(document.activeElement.tagName)) return;
+      if (!state.cur || document.querySelector(".akv-overlay") || ["INPUT", "SELECT", "TEXTAREA"].includes(document.activeElement.tagName)) return;
       const r = byId(state.cur), j = r.depths.indexOf(state.depth);
       if (e.key === "ArrowRight" && j < r.depths.length - 1) { state.depth = r.depths[j + 1]; renderDetail(); }
       if (e.key === "ArrowLeft" && j > 0) { state.depth = r.depths[j - 1]; renderDetail(); }
     });
   }
+
+  // Image viewer overlay: opens a figure over a dimmed page; close with ×, Esc, or a click outside.
+  function zoom(src, caption) {
+    const box = document.createElement("div");
+    box.className = "akv-overlay";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.innerHTML = `<button class="akv-close" aria-label="Close">×</button>
+      <figure><img src="${esc(src)}" alt="${esc(caption)}"><figcaption>${caption || ""}</figcaption></figure>`;
+    const close = () => { box.remove(); document.removeEventListener("keydown", onKey, true); document.body.style.overflow = ""; };
+    const onKey = (e) => { if (e.key === "Escape") { e.stopPropagation(); close(); } };
+    box.addEventListener("click", (e) => { if (e.target === box || e.target.classList.contains("akv-close")) close(); });
+    document.addEventListener("keydown", onKey, true);
+    document.body.style.overflow = "hidden";
+    document.body.appendChild(box);
+    box.querySelector(".akv-close").focus();
+  }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a.akv-zoom");
+    if (!a || e.metaKey || e.ctrlKey) return;
+    e.preventDefault();
+    zoom(a.getAttribute("href"), a.dataset.caption);
+  });
 
   document.addEventListener("DOMContentLoaded", () => document.querySelectorAll("[data-akviewer]").forEach(mount));
 })();

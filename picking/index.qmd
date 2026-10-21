@@ -16,7 +16,7 @@ We compared two pickers on the same events: **PhaseNet-DAS** [@zhu2023], a semi-
 ## Decisions so far
 
 - PhaseNet-DAS on the **spatial gradient** of the data picked better than on the original data, so the gradient is used.
-- Alex's earlier DAS picks were categorized by quality (now outdated).
+- An earlier set of DAS picks was categorized by quality (now outdated).
 - Broadband: PhaseNet [@zhu2019] and AEC picks tried.
 
 ## Open

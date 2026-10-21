@@ -16,8 +16,8 @@ subtitle: "Progress and next steps for AKDAS. Tick boxes by editing this file."
 
 ## Picking [In progress]{.pill .next}
 
-- [x] PhaseNet-DAS and Alex's earlier picks; PhaseNet-DAS on the data gradient looked better, so using gradient
-- [x] Categorized quality of Alex's picks (outdated)
+- [x] PhaseNet-DAS and earlier picks; PhaseNet-DAS on the data gradient looked better, so using gradient
+- [x] Categorized quality of earlier picks (outdated)
 - [x] BB picking: PhaseNet and AEC picks
 - [x] QC figures: event location, DAS data with picks, PhaseNet BB picks
 - [ ] Select good picks, prep for inversion
@@ -44,7 +44,7 @@ subtitle: "Progress and next steps for AKDAS. Tick boxes by editing this file."
 - [ ] Compare travel-time residuals before and after relocation
 - [ ] Test how much locations move when the velocity model is perturbed
 - [ ] Alternate relocation and velocity updates until misfit stops improving
-- [ ] If Alex has location uncertainties, include them as a prior (and also run without)
+- [ ] If location uncertainties are available, include them as a prior (and also run without)
 
 ## Checkerboard quality [In progress]{.pill .next}
 
@@ -60,12 +60,5 @@ subtitle: "Progress and next steps for AKDAS. Tick boxes by editing this file."
 - [ ] Try other models
 - [ ] Compare with earthquake rupture patches in the area (rupture-patch paper via Asta)
 
-## Need from Alex [Waiting]{.pill .wait}
-
-- [ ] Which model was used for relocation [likely @nayak2020]
-- [ ] Final pick sets (DAS and BB, P and S)
-- [x] Units of pick uncertainties: seconds
-- [ ] What the uncertainties mean (std dev? per pick?) and how they were checked
-- [ ] DAS covariance parameters: spatial correlation, pick noise, model uncertainty (clock error removed)
 
 :::
