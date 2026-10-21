@@ -206,7 +206,7 @@
           state.playing = setInterval(() => {
             const j = (r.depths.indexOf(state.depth) + 1) % r.depths.length;
             setDepth(r.depths[j]);
-          }, 700);
+          }, 900);
         };
         const cmp = $d.querySelector("select");
         if (cmp) cmp.onchange = () => { state.cmp = cmp.value; if (state.cmp) preload(byId(state.cmp)); renderSlices(); };
