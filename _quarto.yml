@@ -23,7 +23,7 @@ website:
       - href: picking/index.qmd
         text: Picking
       - href: methods/index.qmd
-        text: Methods & math
+        text: Methods & Math
       - href: plan/index.qmd
         text: Plan
       - href: literature/index.qmd

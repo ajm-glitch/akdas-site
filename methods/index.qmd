@@ -1,5 +1,5 @@
 ---
-title: "Methods & math"
+title: "Methods & Math"
 subtitle: "Eikonal body-wave tomography"
 ---
 

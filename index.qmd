@@ -32,6 +32,6 @@ Synthetic checkerboard tests indicate that DAS resolves 5–10 km structures bet
 - [**Results**](results/index.qmd): every checkerboard run, with a depth slider and side-by-side comparison.
 - [**Models & data**](models/index.qmd): starting velocity models, pick sets, receivers and events.
 - [**Picking**](picking/index.qmd): PhaseNet-DAS vs. the ensemble workflow.
-- [**Methods & math**](methods/index.qmd): the forward problem, objective function, and the code that runs them.
+- [**Methods & Math**](methods/index.qmd): the forward problem, objective function, and the code that runs them.
 - [**Plan**](plan/index.qmd): what's done, what's next, and what we're waiting on.
 - [**Literature**](literature/index.qmd): papers with notes on why each matters here.
