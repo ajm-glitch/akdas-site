@@ -30,7 +30,7 @@ You don't have to rename the files your plotting code already writes. The site s
 
 ```bash
 cp -r ~/AlaskaTomography/checkerboard_3D/depth_slices_new results/runs/2026-10-21_my-run
-cp results/runs/2026-06-06_das3-bb_10km/run.yml results/runs/2026-10-21_my-run/
+cp results/runs/cb020_das-bb_unweighted/run.yml results/runs/2026-10-21_my-run/
 # edit run.yml, then
 git add results/runs/2026-10-21_my-run && git commit -m "Add run my-run" && git push
 ```

@@ -14,7 +14,7 @@
     ["picks", "Picks"],
     ["smoothing_km", "Smoothing", (v) => v + " km"],
     ["iterations", "Iterations"],
-    ["date", "Date"],
+    ["date", "Date", (v) => (v ? esc(v) : "Not recorded")],
     ["source", "Source"],
   ];
   const MODEL_FIELDS = [["kind", "Kind"], ["field", "Field"], ["units", "Units"], ["source", "Source"]];
@@ -98,7 +98,7 @@
       $l.innerHTML = list.length
         ? list.map((r) => `<button class="akv-item" role="option" aria-selected="${r.id === state.cur}" data-id="${esc(r.id)}">
             <span class="akv-item-top"><span class="akv-item-title">${esc(r.title || r.id)}</span></span>
-            <span class="akv-item-meta">${esc([r.date, r.data, r.checker_km ? r.checker_km + " km" : null, r.kind].filter(Boolean).join(" · "))}</span>
+            <span class="akv-item-meta">${esc([isRun ? r.date || "Date not recorded" : null, r.data, r.checker_km ? r.checker_km + " km" : null, r.kind].filter(Boolean).join(" · "))}</span>
             <span class="akv-item-meta">${r.depths.length ? r.depths.length + " depth" + (r.depths.length > 1 ? "s" : "") : "No slices yet"}${r.confirm ? " · <em>to confirm</em>" : ""}${r.warning ? ' · <strong class="akv-bad">invalid</strong>' : ""}</span>
           </button>`).join("")
         : `<p class="akv-empty-note">No runs match this filter.</p>`;
@@ -157,7 +157,7 @@
 
     function renderDetail() {
       const r = byId(state.cur);
-      const fields = (isRun ? RUN_FIELDS : MODEL_FIELDS).filter(([k]) => r[k] != null && r[k] !== "");
+      const fields = (isRun ? RUN_FIELDS : MODEL_FIELDS).filter(([k]) => (isRun && k === "date") || (r[k] != null && r[k] !== ""));
       const others = state.items.filter((x) => x.id !== r.id && x.depths.length);
       let h = `<header class="akv-head">
         <div><h2 id="${esc(r.id)}">${esc(r.title || r.id)}</h2><div class="akv-pills">${pills(r)}</div></div>

@@ -3,7 +3,6 @@ warning: >-
   These results are invalid. The inversion used an incorrect DAS cable geometry, so the recovered
   pattern does not reflect the true resolution of the array. They are kept for the record only and
   should not be used for interpretation.
-date: 2026-01-14
 data: DAS only
 cables: [KKFLS, TERRA]
 weighting: unweighted
