@@ -10,9 +10,11 @@ toc: false
 
 [A. Mirchandani, E. Biondi, M. Denolle, E. Golos, W. Wilcock, B. Lipovsky, A. Rose]{.text-muted}
 
+[Synthetic checkerboard tests · the field-data inversion will use a different event set]{.eyebrow .ak-facts-label}
+
 ::: {.ak-facts}
 <div><b>3</b><small>DAS cables (KKFLS, TERRA, KKFLN)</small></div>
-<div><b>400</b><small>USGS-cataloged events</small></div>
+<div><b>400</b><small>USGS-cataloged events (synthetic tests)</small></div>
 <div><b>45</b><small>broadband stations</small></div>
 <div><b>5–10 km</b><small>structures resolved at 20–70 km depth</small></div>
 :::

@@ -63,6 +63,8 @@ h1, h2, h3 { text-wrap: balance; }
 .figure-caption, figcaption { color: var(--ak-muted); font-size: .86rem; }
 
 // Fact strip on the overview.
+.ak-facts-label { display: block; margin-top: 1.5rem; }
+.ak-facts-label + .ak-facts, .ak-facts-label + p + .ak-facts { margin-top: .5rem; }
 .ak-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--ak-line); border-radius: 10px; background: var(--ak-surface); margin: 1.5rem 0; }
 .ak-facts > div { padding: 14px 16px; border-right: 1px solid var(--ak-line); display: flex; flex-direction: column; }
 .ak-facts > div:last-child { border-right: 0; }
