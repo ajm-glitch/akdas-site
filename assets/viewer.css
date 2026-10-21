@@ -10,6 +10,9 @@
 .akv-item[aria-selected="true"] { border-color: var(--ak-slow); box-shadow: 0 0 0 1px var(--ak-slow); }
 .akv-item-title { font-weight: 600; font-size: .92rem; line-height: 1.3; }
 .akv-item-meta { font-size: .76rem; color: var(--ak-muted); font-variant-numeric: tabular-nums; }
+.akv-bad { color: var(--ak-fast); font-weight: 600; }
+.akv-warning { border: 1px solid var(--ak-fast); background: var(--ak-fast-soft); color: var(--ak-ink); border-radius: 8px; padding: 12px 14px; font-size: .92rem; }
+.akv-warning b { color: var(--ak-fast); }
 .akv-item-meta em { color: var(--ak-warn); font-style: normal; }
 .akv-empty-note { color: var(--ak-muted); font-size: .9rem; }
 .akv-chip:focus-visible, .akv-item:focus-visible, .akv-ticks button:focus-visible, .akv-play:focus-visible { outline: 2px solid var(--ak-slow); outline-offset: 2px; }

@@ -1,5 +1,9 @@
 title: DAS only, 1D start, 10 km checker
-date: 2025-12-02
+warning: >-
+  These results are invalid. The inversion used an incorrect DAS cable geometry, so the recovered
+  pattern does not reflect the true resolution of the array. They are kept for the record only and
+  should not be used for interpretation.
+date: 2025-11-23
 data: DAS only
 cables: [KKFLS, TERRA]
 weighting: unweighted

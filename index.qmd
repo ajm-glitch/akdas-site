@@ -13,8 +13,8 @@ toc: false
 ::: {.ak-facts}
 <div><b>3</b><small>DAS cables (KKFLS, TERRA, KKFLN)</small></div>
 <div><b>400</b><small>USGS-cataloged events</small></div>
-<div><b>10 km</b><small>smallest resolved checker</small></div>
-<div><b>20–70 km</b><small>best-resolved depths</small></div>
+<div><b>45</b><small>broadband stations</small></div>
+<div><b>10–100 km</b><small>checker sizes tested</small></div>
 :::
 
 ::: {layout="[[1,1]]"}
@@ -25,7 +25,7 @@ toc: false
 
 ## Where things stand
 
-Synthetic checkerboard tests show that DAS has enough spatial density to resolve 10 km structures between roughly 20 and 70 km depth, near the most seismically active areas. Current work is finalizing the DAS and broadband pick sets, building covariance weights, and running the first field-data inversion.
+Synthetic checkerboard tests with the 3D starting model have been run for 100, 50, 20 and 10 km checkers, with DAS + broadband, broadband-only, and inverse-density-weighted data. Current work is finalizing the DAS and broadband pick sets, building covariance weights, and quantifying checkerboard recovery before the first field-data inversion.
 
 ## On this site
 

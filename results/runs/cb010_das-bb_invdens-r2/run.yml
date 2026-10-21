@@ -1,4 +1,4 @@
-title: DAS + BB, inverse-density r = 2 km, 10 km checker
+title: DAS + BB, inverse-density weighting (radius 2 km), 10 km checker
 data: DAS + BB
 cables: [KKFLS, TERRA]
 weighting: inverse-density

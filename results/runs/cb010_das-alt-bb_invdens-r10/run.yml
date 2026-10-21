@@ -1,4 +1,4 @@
-title: Alternating DAS channels + BB, inverse-density r = 10 km, 10 km checker
+title: Alternating DAS channels + BB, inverse-density weighting (radius 10 km), 10 km checker
 data: DAS + BB
 cables: [KKFLS, TERRA]
 weighting: inverse-density

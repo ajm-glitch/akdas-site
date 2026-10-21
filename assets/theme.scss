@@ -79,6 +79,7 @@ h1, h2, h3 { text-wrap: balance; }
 .pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 .pill.done { background: var(--ak-ok-soft); color: var(--ak-ok); }
 .pill.next { background: var(--ak-slow-soft); color: var(--ak-slow); }
+.pill.invalid { background: var(--ak-fast-soft); color: var(--ak-fast); }
 .pill.wait, .pill.confirm { background: var(--ak-warn-soft); color: var(--ak-warn); }
 
 // Plan checklist: render task-list checkboxes as quiet markers.

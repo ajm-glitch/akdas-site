@@ -83,7 +83,8 @@
     const byId = (id) => state.items.find((x) => x.id === id);
     const pills = (r) =>
       (r.status === "planned" ? '<span class="pill next">Planned</span>' : isRun ? '<span class="pill done">Run</span>' : "") +
-      (r.confirm ? ' <span class="pill confirm">Details to confirm</span>' : "");
+      (r.confirm ? ' <span class="pill confirm">Details to confirm</span>' : "") +
+      (r.warning ? ' <span class="pill invalid">Invalid results</span>' : "");
 
     function renderFilters() {
       if (!$f) return;
@@ -98,7 +99,7 @@
         ? list.map((r) => `<button class="akv-item" role="option" aria-selected="${r.id === state.cur}" data-id="${esc(r.id)}">
             <span class="akv-item-top"><span class="akv-item-title">${esc(r.title || r.id)}</span></span>
             <span class="akv-item-meta">${esc([r.date, r.data, r.checker_km ? r.checker_km + " km" : null, r.kind].filter(Boolean).join(" · "))}</span>
-            <span class="akv-item-meta">${r.depths.length ? r.depths.length + " depth" + (r.depths.length > 1 ? "s" : "") : "No slices yet"}${r.confirm ? " · <em>to confirm</em>" : ""}</span>
+            <span class="akv-item-meta">${r.depths.length ? r.depths.length + " depth" + (r.depths.length > 1 ? "s" : "") : "No slices yet"}${r.confirm ? " · <em>to confirm</em>" : ""}${r.warning ? ' · <strong class="akv-bad">invalid</strong>' : ""}</span>
           </button>`).join("")
         : `<p class="akv-empty-note">No runs match this filter.</p>`;
       $l.querySelectorAll(".akv-item").forEach((b) => (b.onclick = () => select(b.dataset.id)));
@@ -161,6 +162,7 @@
       let h = `<header class="akv-head">
         <div><h2 id="${esc(r.id)}">${esc(r.title || r.id)}</h2><div class="akv-pills">${pills(r)}</div></div>
       </header>`;
+      if (r.warning) h += `<div class="akv-warning" role="note"><b>Results not valid.</b> ${esc(r.warning).replace(/^These results are invalid\.\s*/, "")}</div>`;
       if (r.description) h += `<p class="akv-notes">${esc(r.description)}</p>`;
 
       if (r.depths.length) {
