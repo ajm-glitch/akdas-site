@@ -1,6 +1,6 @@
 ---
 title: "Literature"
-subtitle: "Papers grouped by how they're used in this project, with a note on why each matters."
+subtitle: "Papers grouped by how they're used in this project, with a note on each."
 suppress-bibliography: true
 ---
 
@@ -42,7 +42,17 @@ Citations come from [`references.bib`](https://github.com/ajm-glitch/akdas-site/
 [Broadband]{.ak-tag} [Picking]{.ak-tag}
 :::
 
-## Alaska velocity models
+## Validating inversion results
+
+Published Alaska models and interpretations to compare our recovered structure against.
+
+::: {.ak-paper}
+**@eberhartphillips2006** [To read]{.pill .next}
+
+[Local-earthquake and active-source 3D velocity model of southern and central Alaska: slab, mantle wedge, and high Vp/Vs beneath volcanoes.]{.why}
+
+[Alaska]{.ak-tag} [Velocity model]{.ak-tag} [Body waves]{.ak-tag}
+:::
 
 ::: {.ak-paper}
 **@nayak2020** [To read]{.pill .next}
@@ -51,6 +61,79 @@ Citations come from [`references.bib`](https://github.com/ajm-glitch/akdas-site/
 
 [Alaska]{.ak-tag} [Velocity model]{.ak-tag}
 :::
+
+::: {.ak-paper}
+**@berg2020** [To read]{.pill .next}
+
+[Shear-velocity model of Alaska from joint inversion of Rayleigh-wave ellipticity, phase velocities, and receiver functions across the Transportable Array.]{.why}
+
+[Alaska]{.ak-tag} [Velocity model]{.ak-tag} [Surface waves]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@martinshort2018** [To read]{.pill .next}
+
+[Joint surface-wave and receiver-function model; links shallow subduction and thick lithosphere to the Denali volcanic gap.]{.why}
+
+[Alaska]{.ak-tag} [Slab geometry]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@li2024** [To read]{.pill .next}
+
+[Amphibious shear-velocity model showing along-strike changes in forearc structure and slab hydration (Shumagin vs. Semidi).]{.why}
+
+[Alaska]{.ak-tag} [Hydration]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@wang2025** [To read]{.pill .next}
+
+[Body-wave tomography of the Alaska Peninsula: slab morphology to 660 km and along-strike variation in slab dehydration.]{.why}
+
+[Alaska]{.ak-tag} [Body waves]{.ak-tag} [Slab geometry]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@rabade2023** [To read]{.pill .next}
+
+[Dense linear array imaging of crustal magmatic structure beneath the Denali volcanic gap.]{.why}
+
+[Alaska]{.ak-tag} [Crust]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@liang2024** [To read]{.pill .next}
+
+[Anisotropic P-wave tomography: big mantle wedge, slab gaps, and mantle flow beneath Alaska.]{.why}
+
+[Alaska]{.ak-tag} [Anisotropy]{.ak-tag} [Slab geometry]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@moser2025** [To read]{.pill .next}
+
+[Local-earthquake Vp, Vs and Vp/Vs tomography of the Alaska Peninsula linking slab dehydration to megathrust rupture barriers.]{.why}
+
+[Alaska]{.ak-tag} [Hydration]{.ak-tag} [Earthquakes]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@hu2024** [To read]{.pill .next}
+
+[Tomography of the Pacific and Yakutat slabs; slab tears and flat-slab wedging as controls on volcanism.]{.why}
+
+[Alaska]{.ak-tag} [Slab geometry]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@millet2023** [To read]{.pill .next}
+
+[3D scattered-wave imaging of the Yakutat-to-Pacific slab transition, with a sharp Moho step offshore Anchorage.]{.why}
+
+[Alaska]{.ak-tag} [Slab geometry]{.ak-tag}
+:::
+
 
 ## Resolution and checkerboard assessment
 

@@ -67,7 +67,6 @@
           ["BB only", (r) => r.data === "BB only"],
           ["1D start", (r) => r.start_model === "alaska-1d"],
           ["3D start", (r) => r.start_model === "alaska-3d"],
-          ["Details to confirm", (r) => r.confirm],
         ]
       : [["All", () => true]];
 
