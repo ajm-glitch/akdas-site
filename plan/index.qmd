@@ -1,6 +1,6 @@
 ---
 title: "Plan"
-subtitle: "Progress and next steps for AKDAS. Tick boxes by editing this file."
+subtitle: "Progress and next steps for AKDAS."
 ---
 
 ::: {.ak-plan}

@@ -84,8 +84,9 @@ h1, h2, h3 { text-wrap: balance; }
 .pill.invalid { background: var(--ak-fast-soft); color: var(--ak-fast); }
 .pill.wait, .pill.confirm { background: var(--ak-warn-soft); color: var(--ak-warn); }
 
-// Plan checklist: render task-list checkboxes as quiet markers.
-.ak-plan ul.task-list li input[type="checkbox"] { accent-color: var(--ak-ok); }
+// Checklists are read-only on the site; they are edited in the .qmd source.
+ul.task-list li input[type="checkbox"] { accent-color: var(--ak-ok); pointer-events: none; }
+.ak-link { font-size: .85rem; margin-left: 6px; white-space: nowrap; }
 .ak-plan h2 { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
 
 // Literature entries.

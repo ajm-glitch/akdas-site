@@ -9,7 +9,7 @@ Citations come from [`references.bib`](https://github.com/ajm-glitch/akdas-site/
 ## DAS and Eikonal tomography
 
 ::: {.ak-paper}
-**@biondi2023** [Read]{.pill .done}
+**@biondi2023** [Read]{.pill .done} [Paper ↗](https://doi.org/10.1126/sciadv.adi9878){.ak-link}
 
 [Source of the Eikonal tomography operator (EikoHypoTomo) and the DAS tomography workflow this project builds on.]{.why}
 
@@ -19,7 +19,7 @@ Citations come from [`references.bib`](https://github.com/ajm-glitch/akdas-site/
 ## Picking
 
 ::: {.ak-paper}
-**@zhu2023** [Read]{.pill .done}
+**@zhu2023** [Read]{.pill .done} [Paper ↗](https://doi.org/10.1038/s41467-023-43355-3){.ak-link}
 
 [PhaseNet-DAS, one of the two DAS pickers compared here; works better on the data gradient.]{.why}
 
@@ -27,7 +27,7 @@ Citations come from [`references.bib`](https://github.com/ajm-glitch/akdas-site/
 :::
 
 ::: {.ak-paper}
-**@shi2025** [Read]{.pill .done}
+**@shi2025** [Read]{.pill .done} [Paper ↗](https://doi.org/10.1029/2024JB029728){.ak-link}
 
 [Masked-autoencoder denoising behind the ensemble workflow, which gave more accurate picks.]{.why}
 
@@ -35,7 +35,7 @@ Citations come from [`references.bib`](https://github.com/ajm-glitch/akdas-site/
 :::
 
 ::: {.ak-paper}
-**@zhu2019** [Suggested]{.pill .next}
+**@zhu2019** [Suggested]{.pill .next} [Paper ↗](https://doi.org/10.1093/gji/ggy423){.ak-link}
 
 [Original PhaseNet, used for the broadband picks.]{.why}
 
@@ -47,7 +47,7 @@ Citations come from [`references.bib`](https://github.com/ajm-glitch/akdas-site/
 Published Alaska models and interpretations to compare our recovered structure against.
 
 ::: {.ak-paper}
-**@eberhartphillips2006** [To read]{.pill .next}
+**@eberhartphillips2006** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2005JB004240){.ak-link}
 
 [Local-earthquake and active-source 3D velocity model of southern and central Alaska: slab, mantle wedge, and high Vp/Vs beneath volcanoes.]{.why}
 
@@ -55,7 +55,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@nayak2020** [To read]{.pill .next}
+**@nayak2020** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1785/0220200214){.ak-link}
 
 [3D Alaska models from joint body- and surface-wave tomography; possibly the model used for event relocation, and a reference for the 3D starting model.]{.why}
 
@@ -63,7 +63,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@berg2020** [To read]{.pill .next}
+**@berg2020** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2019JB018582){.ak-link}
 
 [Shear-velocity model of Alaska from joint inversion of Rayleigh-wave ellipticity, phase velocities, and receiver functions across the Transportable Array.]{.why}
 
@@ -71,7 +71,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@martinshort2018** [To read]{.pill .next}
+**@martinshort2018** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2018GC007962){.ak-link}
 
 [Joint surface-wave and receiver-function model; links shallow subduction and thick lithosphere to the Denali volcanic gap.]{.why}
 
@@ -79,7 +79,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@li2024** [To read]{.pill .next}
+**@li2024** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2023JB027800){.ak-link}
 
 [Amphibious shear-velocity model showing along-strike changes in forearc structure and slab hydration (Shumagin vs. Semidi).]{.why}
 
@@ -87,7 +87,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@wang2025** [To read]{.pill .next}
+**@wang2025** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2024JB029814){.ak-link}
 
 [Body-wave tomography of the Alaska Peninsula: slab morphology to 660 km and along-strike variation in slab dehydration.]{.why}
 
@@ -95,7 +95,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@rabade2023** [To read]{.pill .next}
+**@rabade2023** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2023JB027152){.ak-link}
 
 [Dense linear array imaging of crustal magmatic structure beneath the Denali volcanic gap.]{.why}
 
@@ -103,7 +103,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@liang2024** [To read]{.pill .next}
+**@liang2024** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2023JB027617){.ak-link}
 
 [Anisotropic P-wave tomography: big mantle wedge, slab gaps, and mantle flow beneath Alaska.]{.why}
 
@@ -111,7 +111,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@moser2025** [To read]{.pill .next}
+**@moser2025** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2025GL115790){.ak-link}
 
 [Local-earthquake Vp, Vs and Vp/Vs tomography of the Alaska Peninsula linking slab dehydration to megathrust rupture barriers.]{.why}
 
@@ -119,7 +119,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@hu2024** [To read]{.pill .next}
+**@hu2024** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1038/s41598-024-76595-4){.ak-link}
 
 [Tomography of the Pacific and Yakutat slabs; slab tears and flat-slab wedging as controls on volcanism.]{.why}
 
@@ -127,7 +127,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@millet2023** [To read]{.pill .next}
+**@millet2023** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2022GC010374){.ak-link}
 
 [3D scattered-wave imaging of the Yakutat-to-Pacific slab transition, with a sharp Moho step offshore Anchorage.]{.why}
 
@@ -138,7 +138,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 ## Resolution and checkerboard assessment
 
 ::: {.ak-paper}
-**@huang2015** [To read]{.pill .next}
+**@huang2015** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1126/science.aaa5648){.ak-link}
 
 [The supplement defines the resolvability index $R$ that turns checkerboard results into a resolution map.]{.why}
 
@@ -146,7 +146,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@wang2004** [To read]{.pill .next}
+**@wang2004** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1109/TIP.2003.819861){.ak-link}
 
 [The original SSIM paper, for scoring recovered checkerboards against the true pattern.]{.why}
 
@@ -154,7 +154,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@leveque1993** [Suggested]{.pill .next}
+**@leveque1993** [Suggested]{.pill .next} [Paper ↗](https://doi.org/10.1111/j.1365-246X.1993.tb05605.x){.ak-link}
 
 [Classic caution that checkerboard tests can look good while larger structures are poorly resolved. Worth citing when presenting the tests.]{.why}
 
@@ -162,7 +162,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 ::: {.ak-paper}
-**@rawlinson2016** [Suggested]{.pill .next}
+**@rawlinson2016** [Suggested]{.pill .next} [Paper ↗](https://doi.org/10.1093/gji/ggw084){.ak-link}
 
 [A review of sensitivity tests (checkerboards, spikes, structural tests) and how to interpret them.]{.why}
 

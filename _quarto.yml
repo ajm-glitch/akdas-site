@@ -48,3 +48,6 @@ format:
     code-copy: true
     lightbox: true
     link-external-newwindow: true
+    include-after-body:
+      - text: |
+          <script>document.querySelectorAll('.task-list input[type="checkbox"]').forEach(function (c) { c.disabled = true; c.tabIndex = -1; });</script>
