@@ -123,8 +123,14 @@
       const d = String(state.depth);
       const panels = [];
       if (isRun) {
-        const t = (r.true && r.true[d]) || r.true_any;
-        panels.push(t ? [t, "True pattern" + (r.true && r.true[d] ? ` at ${d} km` : "")] : [null, "True pattern not added"]);
+        // Prefer the true pattern at this depth; otherwise a depth-less one; otherwise the nearest depth we have.
+        let t = r.true && r.true[d], cap = `True pattern at ${d} km`;
+        if (!t && r.true_any) { t = r.true_any; cap = "True pattern"; }
+        if (!t && r.true && Object.keys(r.true).length) {
+          const near = Object.keys(r.true).map(Number).sort((a, b) => Math.abs(a - state.depth) - Math.abs(b - state.depth))[0];
+          t = r.true[String(near)]; cap = `True pattern at ${near} km`;
+        }
+        panels.push(t ? [t, cap] : [null, "True pattern not added"]);
       }
       panels.push(r.slices[d] ? [r.slices[d], `${isRun ? "Recovered" : esc(r.title)} at ${d} km`] : [null, `No slice at ${d} km`]);
       if (state.cmp) {

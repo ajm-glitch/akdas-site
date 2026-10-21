@@ -116,7 +116,8 @@ def build(section: str, meta_name: str) -> list[dict]:
             e = scan(folder, meta_name, folder.parent.name)
             if e:
                 entries.append(e)
-    # Newest first; undated entries last.
+    # Newest first; undated entries last, in folder-name order.
+    entries.sort(key=lambda e: e["id"])
     entries.sort(key=lambda e: e.get("date") or "", reverse=True)
     return entries
 

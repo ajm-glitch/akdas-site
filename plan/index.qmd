@@ -12,7 +12,7 @@ subtitle: "Progress and next steps for AKDAS. Tick boxes by editing this file."
 - [x] Inverse-density, alternating DAS channels only, 10 km: radius 10, 20 km
 - [x] Unweighted, BB only, 10 km
 - [x] 1D model tests to find the best-resolved checker size
-- [ ] Move all of these into [Results](../results/index.qmd) (figures are still in Google Slides)
+- [x] Moved into [Results](../results/index.qmd)
 
 ## Picking [In progress]{.pill .next}
 

@@ -1,0 +1,22 @@
+title: Alternating DAS channels + BB, inverse-density r = 20 km, 10 km checker
+data: DAS + BB
+cables: [KKFLS, TERRA]
+weighting: inverse-density
+radius_km: 20
+checker_km: 10
+anomaly_pct: 5
+start_model: alaska-3d
+picks: synthetic
+iterations: 60
+status: done
+confirm: false
+source: "Updates/plots slides 28–31"
+captions:
+  a_bfgs_convergence.webp: BFGS convergence
+  b_residuals.webp: Initial vs final travel-time residuals
+  c_residual_l2_norm.webp: Residual L2 norm, RMS per trace, and DAS vs BB share of misfit, per iteration
+  d_profile_se-nw.webp: Recovered SE–NW profile
+  e_profile_sw-ne.webp: Recovered SW–NE profile
+  f_profile_se-nw_true.webp: True SE–NW profile
+notes: |
+  Only alternating DAS channels used. Depth slices taken from the slide GIF.

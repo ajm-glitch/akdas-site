@@ -1,4 +1,4 @@
-title: Broadband run, 10 km checker
+title: Broadband only, unweighted, 10 km checker
 date: 2026-03-23
 data: BB only
 weighting: unweighted
@@ -7,8 +7,12 @@ anomaly_pct: 5
 start_model: alaska-3d
 picks: synthetic
 status: done
-confirm: true
-source: AlaskaTomography @ bec0a30, checkerboard_3D/depth_slice_maps_10km_station
+confirm: false
+source: AlaskaTomography @ bec0a30, checkerboard_3D/depth_slice_maps_10km_station; Updates/plots slides 68–91
+captions:
+  b_residuals.webp: Initial vs final travel-time residuals
+  d_profile_se-nw.webp: Recovered SE–NW profile
+  e_profile_sw-ne.webp: Recovered SW–NE profile
 notes: |
-  Commit message says "broadband only, 10km", but the maps also draw the DAS cables. Confirm which
-  receivers were used.
+  Same run as slides 68–91 of the updates deck. The maps also draw the DAS cables, but only broadband
+  stations were used.
