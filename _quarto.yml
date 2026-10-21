@@ -1,0 +1,52 @@
+project:
+  type: website
+  pre-render: python scripts/build_index.py
+  resources:
+    - "results/runs/**"
+    - "results/runs.json"
+    - "models/items/**"
+    - "models/models.json"
+    - "assets/**"
+
+website:
+  title: "AKDAS"
+  description: "Seismic tomography of the Alaska subduction zone using distributed acoustic sensing"
+  page-navigation: false
+  navbar:
+    left:
+      - href: index.qmd
+        text: Overview
+      - href: results/index.qmd
+        text: Results
+      - href: models/index.qmd
+        text: Models & data
+      - href: picking/index.qmd
+        text: Picking
+      - href: methods/index.qmd
+        text: Methods & math
+      - href: plan/index.qmd
+        text: Plan
+      - href: literature/index.qmd
+        text: Literature
+    right:
+      - icon: github
+        href: https://github.com/ajm-glitch/AlaskaTomography
+        aria-label: Code repository
+  page-footer:
+    left: "Mirchandani et al. · University of Washington"
+    right: "Add a run: see [How to add results](/adding-results.qmd)"
+
+bibliography: literature/references.bib
+csl: assets/agu.csl
+
+format:
+  html:
+    theme:
+      light: [cosmo, assets/theme.scss]
+      dark: [cosmo, assets/theme.scss, assets/theme-dark.scss]
+    toc: true
+    toc-depth: 2
+    html-math-method: katex
+    code-copy: true
+    lightbox: true
+    link-external-newwindow: true

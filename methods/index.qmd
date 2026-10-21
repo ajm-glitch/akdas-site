@@ -1,0 +1,81 @@
+---
+title: "Methods & math"
+subtitle: "Eikonal body-wave tomography"
+---
+
+Code lives in [AlaskaTomography](https://github.com/ajm-glitch/AlaskaTomography). The solver is [EikoHypoTomo](https://github.com/biondiettore/EikoHypoTomo) [@biondi2023], included as a submodule.
+
+## Forward problem
+
+First-arrival travel times $T$ from each source satisfy the Eikonal equation through the velocity model $v$:
+
+$$
+\lvert \nabla T(\mathbf{x}) \rvert = \frac{1}{v(\mathbf{x})}
+$$
+
+Travel times are computed for P and S to every DAS channel and broadband station, for each of the 400 catalog events.
+
+**Code:** [`checkerboard_3D/forward_modeling.ipynb`](https://github.com/ajm-glitch/AlaskaTomography/blob/main/checkerboard_3D/forward_modeling.ipynb)
+
+## Objective function
+
+We minimize the misfit between observed and predicted travel times:
+
+$$
+\phi(\mathbf{v}) = \tfrac{1}{2}\,\big\lVert \mathbf{f}(\mathbf{v}) - \boldsymbol{\tau}_{obs} \big\rVert_2^2
+$$
+
+where $\boldsymbol{\tau}_{obs}$ are the observed travel times, $\mathbf{f}$ is the Eikonal operator, $\mathbf{v}$ is the velocity vector, and $\lambda$ weights the body-wave travel-time errors. The model is updated with BFGS (60 iterations in the June runs).
+
+**Code:** the inversion is run from the [`Makefile`](https://github.com/ajm-glitch/AlaskaTomography/blob/main/Makefile):
+
+```makefile
+EikoDD_AKTest_20km_both: $(catalog) $(vel_model) | $(synthetic_data_dir)
+	$(CONDA_RUN) python -u $(EIKO_MAIN) $@_TOMO 60 $(vel_model) \
+	  --LocFile $(catalog) \
+	  --Traveltimes $(synthetic_data_dir) \
+	  --sigma_smoo 2.5 -par 2 --Ginsu 0 --saveResult 1 1 1 1
+```
+
+## Checkerboard tests
+
+The synthetic model multiplies the starting model by a 3D cosine pattern with half-wavelength $L$ (the "checker size") and amplitude $a$ (5%):
+
+$$
+\delta v(x, y, z) = a\, v_0(x, y, z)\, \cos\!\left(\frac{\pi x}{L}\right) \cos\!\left(\frac{\pi y}{L}\right) \cos\!\left(\frac{\pi z}{L}\right)
+$$
+
+```python
+sineY = np.cos(np.pi / size_check * yAxis)[:, None, None]
+sineX = np.cos(np.pi / size_check * xAxis)[None, :, None]
+sineZ = np.cos(np.pi / size_check * zAxis)[None, None, :]
+checkerboardVp = sineX * sineY * sineZ * scale_anomaly * VpInit
+```
+
+Synthetic travel times through this model are inverted from the unperturbed starting model, and the recovered pattern is compared with the true one ([Results](../results/index.qmd)).
+
+**Code:** [`checkerboard_3D/checkerboard_setup.ipynb`](https://github.com/ajm-glitch/AlaskaTomography/blob/main/checkerboard_3D/checkerboard_setup.ipynb), [`checkerboard_3D/evaluate_checkerboard_results.ipynb`](https://github.com/ajm-glitch/AlaskaTomography/blob/main/checkerboard_3D/evaluate_checkerboard_results.ipynb)
+
+## Planned: covariance weighting
+
+Separate DAS and broadband data covariances, so the dense, correlated DAS channels don't overwhelm the broadband data:
+
+$$
+\phi(\mathbf{v}) = \tfrac{1}{2}\,\mathbf{r}^{\mathsf T}\,\mathbf{C}_d^{-1}\,\mathbf{r},
+\qquad \mathbf{r} = \mathbf{f}(\mathbf{v}) - \boldsymbol{\tau}_{obs},
+\qquad \mathbf{C}_d = \begin{bmatrix} \mathbf{C}_{DAS} & \mathbf{0} \\ \mathbf{0} & \mathbf{C}_{BB} \end{bmatrix}
+$$
+
+DAS covariance terms: spatial correlation, pick noise, and model uncertainty.
+
+## Planned: alternating relocation
+
+1. Hold the velocity model fixed and relocate every event, using the picks and covariance weights.
+2. Hold the new locations fixed and update the velocity model.
+3. Repeat until the misfit stops improving.
+
+## Planned: resolution metrics
+
+- Ray coverage
+- Image similarity between true and recovered patterns, e.g. SSIM [@wang2004]
+- Resolvability index $R$ from the supplement of @huang2015

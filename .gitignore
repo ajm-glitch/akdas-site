@@ -1,0 +1,6 @@
+/.quarto/
+/_site/
+results/runs.json
+models/models.json
+**/*.quarto_ipynb
+__pycache__/

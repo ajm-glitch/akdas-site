@@ -1,0 +1,29 @@
+/*-- scss:defaults --*/
+$body-bg: #10151b;
+$body-color: #e4e9ef;
+$primary: #7fb0ea;
+$link-color: #7fb0ea;
+$border-color: #2a3440;
+$text-muted: #97a4b3;
+$navbar-bg: #171e26;
+$navbar-fg: #e4e9ef;
+$navbar-hl: #7fb0ea;
+$footer-bg: #171e26;
+$code-color: #ec8a7d;
+
+/*-- scss:rules --*/
+:root {
+  --ak-slow: #7fb0ea;
+  --ak-fast: #ec8a7d;
+  --ak-ink: #e4e9ef;
+  --ak-muted: #97a4b3;
+  --ak-line: #2a3440;
+  --ak-surface: #171e26;
+  --ak-paper: #10151b;
+  --ak-slow-soft: #1b2a3c;
+  --ak-fast-soft: #3a2220;
+  --ak-ok: #7cc79a;
+  --ak-ok-soft: #1b3326;
+  --ak-warn: #e2b45e;
+  --ak-warn-soft: #3a2e16;
+}

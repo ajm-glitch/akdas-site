@@ -1,0 +1,36 @@
+---
+title: "Models & data"
+subtitle: "Starting velocity models, pick sets, and receivers that the runs refer to."
+page-layout: full
+toc: false
+include-in-header:
+  - text: |
+      <link rel="stylesheet" href="../assets/viewer.css">
+      <script src="../assets/viewer.js"></script>
+---
+
+## Starting models
+
+Runs name their starting model in `run.yml` (`start_model: alaska-3d`), and the run page links here. The slider shows Vp at each depth. The 1D model is opened beside the 3D model for comparison.
+
+::: {data-akviewer="" data-src="models.json" data-mode="model" data-start="alaska-3d" data-compare="alaska-1d"}
+:::
+
+## Pick sets {#picks}
+
+Runs name the picks they inverted in `run.yml` (`picks: ...`). Checkerboard runs use `synthetic`: travel times computed through the checkerboard model, with no real picks.
+
+| Name | Receivers | Phases | Status | Notes |
+|---|---|---|---|---|
+| `synthetic` | DAS + BB | P, S | In use | Eikonal travel times through the checkerboard model for the 400 catalog events |
+| `phasenet-das-gradient` | DAS | P, S | Testing | PhaseNet-DAS run on the spatial gradient of the data, which picked better than the raw data |
+| `ensemble-denoised` | DAS | P, S | Testing | Denoise-then-pick ensemble workflow ([Picking](../picking/index.qmd)) |
+| `alex-das` | DAS | P, S | Outdated | Alex's earlier DAS picks; quality categorized in the pick-quality sheet |
+| `phasenet-bb`, `aec-bb` | BB | P, S | Testing | Broadband picks from PhaseNet and AEC |
+| `final` | DAS + BB | P, S | Not yet | Final pick set for the field-data inversion |
+
+## Receivers and events
+
+- **DAS cables:** KKFLS, TERRA, and KKFLN in Cook Inlet. Channel coordinates are in `AlaskaTomography/cable_info/`.
+- **Broadband stations:** `AlaskaTomography/stations/all_stations.csv` (AK network plus Badger stations).
+- **Events:** 400 USGS-cataloged earthquakes, cleaned in `cleaning_usgs_catalog.ipynb` → `catalogs/clean_AK_events.csv`.

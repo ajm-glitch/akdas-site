@@ -1,0 +1,27 @@
+---
+title: "Picking DAS arrivals"
+subtitle: "Travel-time measurements with deep learning"
+---
+
+We compared two pickers on the same events: **PhaseNet-DAS** [@zhu2023], a semi-supervised model built for DAS, and an **ensemble workflow** that denoises with masked autoencoders before picking [@shi2025]. PhaseNet-DAS performs reasonably well, but the ensemble picks track the Eikonal predictions from a 1D model more closely.
+
+::: {layout="[[1,1]]"}
+![PhaseNet-DAS picks with predicted P and S (Eikonal, 1D model).](../images/picks-phasenet.webp){fig-alt="DAS waveform section with PhaseNet-DAS picks"}
+
+![Ensemble-based workflow picks on the same event.](../images/picks-ensemble.webp){fig-alt="DAS waveform section with ensemble picks"}
+:::
+
+![Pick residuals relative to 1D predictions for both pickers, P and S.](../images/pick-residuals.webp){fig-alt="Histogram of pick residuals" width="85%"}
+
+## Decisions so far
+
+- PhaseNet-DAS on the **spatial gradient** of the data picked better than on the original data, so the gradient is used.
+- Alex's earlier DAS picks were categorized by quality (now outdated).
+- Broadband: PhaseNet [@zhu2019] and AEC picks tried.
+
+## Open
+
+- [ ] Select good picks and prep them for inversion
+- [ ] Decide the final DAS and BB pick sets (P and S)
+
+See [Pick sets](../models/index.qmd#picks) for the named sets that runs refer to.

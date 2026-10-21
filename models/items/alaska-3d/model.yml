@@ -1,0 +1,9 @@
+title: 3D Alaska model
+kind: starting model
+field: Vp
+units: km/s
+confirm: true
+description: |
+  3D starting/base model for the Cook Inlet grid. Likely derived from the joint body-wave and
+  surface-wave models of Nayak et al. (2020); confirm the source and version.
+source: AlaskaTomography, comparing_base_models/figs_base_model_3D

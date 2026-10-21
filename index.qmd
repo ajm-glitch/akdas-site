@@ -1,0 +1,37 @@
+---
+title: "Seismic tomography of the Alaska subduction zone using distributed acoustic sensing"
+title-block-banner: false
+toc: false
+---
+
+[Project overview · Cook Inlet, Alaska]{.eyebrow}
+
+[Two fiber-optic cables in Cook Inlet become dense seismic arrays. We pick body-wave arrivals on DAS and broadband stations and invert them with Eikonal tomography to image the subducting Pacific plate.]{.lede}
+
+[A. Mirchandani, E. Biondi, M. Denolle, E. Golos, W. Wilcock, B. Lipovsky, A. Rose]{.text-muted}
+
+::: {.ak-facts}
+<div><b>3</b><small>DAS cables (KKFLS, TERRA, KKFLN)</small></div>
+<div><b>400</b><small>USGS-cataloged events</small></div>
+<div><b>10 km</b><small>smallest resolved checker</small></div>
+<div><b>20–70 km</b><small>best-resolved depths</small></div>
+:::
+
+::: {layout="[[1,1]]"}
+![Study region. Events colored by depth; KKFLS (red) and TERRA (blue) cables.](images/region-map.webp){fig-alt="Map of Cook Inlet with DAS cables and 400 earthquakes colored by depth"}
+
+![Location within southern Alaska.](images/alaska-locator.webp){fig-alt="Locator map of Alaska with the study area boxed"}
+:::
+
+## Where things stand
+
+Synthetic checkerboard tests show that DAS has enough spatial density to resolve 10 km structures between roughly 20 and 70 km depth, near the most seismically active areas. Current work is finalizing the DAS and broadband pick sets, building covariance weights, and running the first field-data inversion.
+
+## On this site
+
+- [**Results**](results/index.qmd): every checkerboard run, with a depth slider and side-by-side comparison.
+- [**Models & data**](models/index.qmd): starting velocity models, pick sets, receivers and events.
+- [**Picking**](picking/index.qmd): PhaseNet-DAS vs. the ensemble workflow.
+- [**Methods & math**](methods/index.qmd): the forward problem, objective function, and the code that runs them.
+- [**Plan**](plan/index.qmd): what's done, what's next, and what we're waiting on.
+- [**Literature**](literature/index.qmd): papers with notes on why each matters here.

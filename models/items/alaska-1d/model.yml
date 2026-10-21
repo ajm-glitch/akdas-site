@@ -1,0 +1,9 @@
+title: 1D Alaska model
+kind: starting model
+field: Vp
+units: km/s
+confirm: true
+description: |
+  Laterally uniform starting model, used for the first checkerboard tests and for predicted
+  travel times in pick QC. Confirm the source.
+source: AlaskaTomography, comparing_base_models/figs_base_model_1D

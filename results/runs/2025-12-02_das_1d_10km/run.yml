@@ -1,0 +1,20 @@
+title: DAS only, 1D start, 10 km checker
+date: 2025-12-02
+data: DAS only
+cables: [KKFLS, TERRA]
+weighting: unweighted
+checker_km: 10
+anomaly_pct: 5
+start_model: alaska-1d
+picks: synthetic
+status: done
+confirm: false
+source: AlaskaTomography @ 2cb0ef8, 1D_checkerboard_10km_figs
+captions:
+  profile_se-nw.webp: SE–NW profile
+  profile_sw-ne.webp: SW–NE profile
+  residuals.webp: Initial vs final travel-time residuals
+notes: |
+  The AGU 2025 poster run. Residual spread drops sharply after inversion. Profiles recover
+  the checkerboard geometry with resolution strongest above ~120 km. Depth slices recover the
+  10 km anomalies well at 20–70 km; smearing increases outside that range.

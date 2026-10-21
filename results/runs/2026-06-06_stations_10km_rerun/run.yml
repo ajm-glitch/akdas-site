@@ -1,0 +1,14 @@
+title: Stations run, 10 km checker (June replot)
+date: 2026-06-06
+data: BB only
+weighting: unweighted
+checker_km: 10
+anomaly_pct: 5
+start_model: alaska-3d
+picks: synthetic
+status: done
+confirm: true
+source: AlaskaTomography @ HEAD, checkerboard_3D/depth_slice_maps_10km_station
+notes: |
+  Same folder as the March broadband run but replaced in June, with much weaker recovery.
+  Confirm what changed.

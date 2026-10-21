@@ -1,0 +1,71 @@
+---
+title: "Plan"
+subtitle: "Progress and next steps for AKDAS. Tick boxes by editing this file."
+---
+
+::: {.ak-plan}
+
+## Checkerboard tests [Done]{.pill .done}
+
+- [x] Unweighted, DAS + BB: 100, 50, 20 km
+- [x] Inverse-density weighting, DAS + BB, 10 km: radius 2, 5, 10 km
+- [x] Inverse-density, alternating DAS channels only, 10 km: radius 10, 20 km
+- [x] Unweighted, BB only, 10 km
+- [x] 1D model tests to find the best-resolved checker size
+- [ ] Move all of these into [Results](../results/index.qmd) (figures are still in Google Slides)
+
+## Picking [In progress]{.pill .next}
+
+- [x] PhaseNet-DAS and Alex's earlier picks; PhaseNet-DAS on the data gradient looked better, so using gradient
+- [x] Categorized quality of Alex's picks (outdated)
+- [x] BB picking: PhaseNet and AEC picks
+- [x] QC figures: event location, DAS data with picks, PhaseNet BB picks
+- [ ] Select good picks, prep for inversion
+- [ ] Decide final DAS and BB pick sets
+
+## Covariance weighting [Next]{.pill .next}
+
+- [ ] Build DAS and BB covariance matrices
+- [ ] Apply the joint DAS + BB method to get the weighting scheme
+- [ ] Try changing the smoothing parameter during inversion
+
+## Field data inversion [Next]{.pill .next}
+
+- [ ] Run it; confirm the data are fit well and everything ran properly
+- [ ] Start with 20–25 km smoothing
+- [ ] Run with both the 3D and 1D starting models
+- [ ] Perturb the velocity model and see what happens
+
+## Event relocation [Next]{.pill .next}
+
+- [ ] Relocate with the joint DAS + BB method (hypocenter, origin time, confidence ellipsoid)
+- [ ] Compare BB-only, DAS-only, and joint locations against current coordinates
+- [ ] Check whether current coordinates fall inside the confidence ellipsoids
+- [ ] Compare travel-time residuals before and after relocation
+- [ ] Test how much locations move when the velocity model is perturbed
+- [ ] Alternate relocation and velocity updates until misfit stops improving
+- [ ] If Alex has location uncertainties, include them as a prior (and also run without)
+
+## Checkerboard quality [In progress]{.pill .next}
+
+- [ ] Ray coverage
+- [ ] Image correlation metric (SSIM under evaluation)
+- [ ] Resolvability index $R$ [@huang2015, supplement]
+
+## Interpretation [Later]{.pill .next}
+
+- [ ] Validate with previous studies
+- [ ] Understand each anomaly
+- [ ] Literature review
+- [ ] Try other models
+- [ ] Compare with earthquake rupture patches in the area (rupture-patch paper via Asta)
+
+## Need from Alex [Waiting]{.pill .wait}
+
+- [ ] Which model was used for relocation [likely @nayak2020]
+- [ ] Final pick sets (DAS and BB, P and S)
+- [x] Units of pick uncertainties: seconds
+- [ ] What the uncertainties mean (std dev? per pick?) and how they were checked
+- [ ] DAS covariance parameters: spatial correlation, pick noise, model uncertainty (clock error removed)
+
+:::

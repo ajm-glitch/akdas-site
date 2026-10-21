@@ -1,0 +1,91 @@
+---
+title: "Literature"
+subtitle: "Papers grouped by how they're used in this project, with a note on why each matters."
+---
+
+Citations come from [`references.bib`](https://github.com/ajm-glitch/akdas-site/blob/main/literature/references.bib). To add a paper, paste its BibTeX entry there (Google Scholar → Cite → BibTeX) and add a short entry below using its key. The same keys work in the manuscript.
+
+## DAS and Eikonal tomography
+
+::: {.ak-paper}
+**@biondi2023** [Read]{.pill .done}
+
+[Source of the Eikonal tomography operator (EikoHypoTomo) and the DAS tomography workflow this project builds on.]{.why}
+
+[DAS]{.ak-tag} [Eikonal tomography]{.ak-tag}
+:::
+
+## Picking
+
+::: {.ak-paper}
+**@zhu2023** [Read]{.pill .done}
+
+[PhaseNet-DAS, one of the two DAS pickers compared here; works better on the data gradient.]{.why}
+
+[DAS]{.ak-tag} [Picking]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@shi2025** [Read]{.pill .done}
+
+[Masked-autoencoder denoising behind the ensemble workflow, which gave more accurate picks.]{.why}
+
+[DAS]{.ak-tag} [Picking]{.ak-tag} [Denoising]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@zhu2019** [Suggested]{.pill .next}
+
+[Original PhaseNet, used for the broadband picks.]{.why}
+
+[Broadband]{.ak-tag} [Picking]{.ak-tag}
+:::
+
+## Alaska velocity models
+
+::: {.ak-paper}
+**@nayak2020** [To read]{.pill .next}
+
+[3D Alaska models from joint body- and surface-wave tomography; likely the model Alex used for relocation, and a reference for the 3D starting model. Confirm with Alex.]{.why}
+
+[Alaska]{.ak-tag} [Velocity model]{.ak-tag}
+:::
+
+## Resolution and checkerboard assessment
+
+::: {.ak-paper}
+**@huang2015** [To read]{.pill .next}
+
+[The supplement defines the resolvability index $R$ that turns checkerboard results into a resolution map.]{.why}
+
+[Resolution]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@wang2004** [To read]{.pill .next}
+
+[The original SSIM paper, for scoring recovered checkerboards against the true pattern.]{.why}
+
+[Resolution]{.ak-tag} [Image metrics]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@leveque1993** [Suggested]{.pill .next}
+
+[Classic caution that checkerboard tests can look good while larger structures are poorly resolved. Worth citing when presenting the tests.]{.why}
+
+[Resolution]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@rawlinson2016** [Suggested]{.pill .next}
+
+[A review of sensitivity tests (checkerboards, spikes, structural tests) and how to interpret them.]{.why}
+
+[Resolution]{.ak-tag}
+:::
+
+## References
+
+::: {#refs}
+:::

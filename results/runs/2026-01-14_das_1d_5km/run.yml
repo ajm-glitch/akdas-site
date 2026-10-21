@@ -1,0 +1,14 @@
+title: DAS only, 1D start, 5 km checker
+date: 2026-01-14
+data: DAS only
+cables: [KKFLS, TERRA]
+weighting: unweighted
+checker_km: 5
+anomaly_pct: 5
+start_model: alaska-1d
+picks: synthetic
+status: done
+confirm: true
+source: AlaskaTomography @ 671c3e4, depth_slice_maps_5km
+notes: |
+  Imported from git history ("ran inversion for 5km anomaly"). True 5 km pattern not saved in the repo.
