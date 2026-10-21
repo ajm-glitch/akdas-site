@@ -1,7 +1,7 @@
 title: Broadband only, unweighted, 10 km checker
 date: 2026-03-03
 data: BB only
-weighting: unweighted
+weighting: none (equal weights)
 checker_km: 10
 anomaly_pct: 5
 start_model: alaska-3d

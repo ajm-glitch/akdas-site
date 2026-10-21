@@ -5,7 +5,7 @@ warning: >-
   should not be used for interpretation.
 data: DAS only
 cables: [KKFLS, TERRA]
-weighting: unweighted
+weighting: none (equal weights)
 checker_km: 5
 anomaly_pct: 5
 start_model: alaska-1d

@@ -2,7 +2,7 @@ title: DAS + BB, unweighted, 50 km checker
 date: 2026-06-02
 data: DAS + BB
 cables: [KKFLS, TERRA]
-weighting: unweighted
+weighting: none (equal weights)
 checker_km: 50
 anomaly_pct: 5
 start_model: alaska-3d

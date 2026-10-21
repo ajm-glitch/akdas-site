@@ -1,13 +1,13 @@
 title: DAS only, 3D start, 10 km checker
 data: DAS only
 cables: [KKFLS, TERRA]
-weighting: unweighted
+weighting: none (equal weights)
 checker_km: 10
 anomaly_pct: 5
 start_model: alaska-3d
 picks: synthetic
 status: done
-confirm: true
+confirm: false
 source: AlaskaTomography @ 3cd605a, checkerboard_3D/depth_slice_maps_3D_10km
 notes: |
-  Imported from git history ("ran inversion with 3D initial model"). True pattern borrowed from the AGU run.
+  Receivers: the two DAS cables (KKFLS, TERRA) only. True pattern image borrowed from the AGU run (same 10 km checker).

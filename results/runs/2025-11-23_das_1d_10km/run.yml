@@ -6,7 +6,7 @@ warning: >-
 date: 2025-11-23
 data: DAS only
 cables: [KKFLS, TERRA]
-weighting: unweighted
+weighting: none (equal weights)
 checker_km: 10
 anomaly_pct: 5
 start_model: alaska-1d
