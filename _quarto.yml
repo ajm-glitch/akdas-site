@@ -4,6 +4,8 @@ project:
   resources:
     - "results/runs/**"
     - "results/runs.json"
+    - "results/field/runs/**"
+    - "results/field/runs.json"
     - "models/items/**"
     - "models/models.json"
     - "assets/**"
@@ -16,8 +18,14 @@ website:
     left:
       - href: index.qmd
         text: Overview
-      - href: results/index.qmd
-        text: Results
+      - text: Results
+        menu:
+          - href: results/index.qmd
+            text: Checkerboard tests
+          - href: results/field/index.qmd
+            text: Field-data inversion
+      - href: analysis/index.qmd
+        text: Analysis
       - href: models/index.qmd
         text: Models & data
       - href: picking/index.qmd

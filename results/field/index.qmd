@@ -1,0 +1,25 @@
+---
+title: "Field-data inversion"
+subtitle: "Velocity models from the real DAS and broadband picks."
+page-layout: full
+toc: false
+include-in-header:
+  - text: |
+      <link rel="stylesheet" href="../../assets/viewer.css">
+      <script src="../../assets/viewer.js"></script>
+---
+
+No field-data inversions yet. Each run goes in its own folder in `results/field/runs/`, set up the same way as a checkerboard run (see [How to add results](../../adding-results.qmd)). The run shows up here with the same depth slider and comparison tools.
+
+::: {data-akviewer="" data-src="runs.json" data-mode="run"}
+:::
+
+## Slab comparison
+
+Compare the slab recovered by the inversion with independent estimates of its geometry:
+
+- **Slab2** depth contours for the Alaska–Aleutians region [@hayes2018; @hayes2018data]
+- Published Alaska models [@berg2020; @martinshort2016; @nayak2020] and the other papers under *Validating inversion results* on the [Literature](../../literature/index.qmd) page
+- The Wadati–Benioff zone traced by our own catalog seismicity
+
+*To be added once the first field-data inversion is run.*

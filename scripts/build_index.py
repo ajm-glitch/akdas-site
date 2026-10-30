@@ -125,9 +125,11 @@ def build(section: str, meta_name: str) -> list[dict]:
 def main() -> None:
     runs = build("results/runs", "run.yml")
     (ROOT / "results" / "runs.json").write_text(json.dumps(runs, indent=1))
+    field = build("results/field/runs", "run.yml")
+    (ROOT / "results" / "field" / "runs.json").write_text(json.dumps(field, indent=1))
     models = build("models/items", "model.yml")
     (ROOT / "models" / "models.json").write_text(json.dumps(models, indent=1))
-    print(f"build_index: {len(runs)} runs, {len(models)} models")
+    print(f"build_index: {len(runs)} checkerboard runs, {len(field)} field runs, {len(models)} models")
 
 
 if __name__ == "__main__":

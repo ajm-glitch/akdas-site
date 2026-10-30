@@ -1,0 +1,82 @@
+---
+title: "Analysis"
+subtitle: "How we measure what an inversion recovered. Each metric is defined once here; per-run values are on the Results pages."
+---
+
+The metrics apply to both [checkerboard tests](../results/index.qmd) and the [field-data inversion](../results/field/index.qmd). For checkerboards there is a known true model to compare against. For field data there isn't one, so comparison metrics need a reference model such as Slab2 or a published velocity model.
+
+Code: the cell *"Quantitative checkerboard recovery: SSIM + companion metrics"* at the end of [`checkerboard_3D/evaluate_checkerboard_results.ipynb`](https://github.com/ajm-glitch/AlaskaTomography/blob/main/checkerboard_3D/evaluate_checkerboard_results.ipynb). Metrics are computed on each horizontal depth slice (10–200 km), in percent velocity perturbation relative to the starting model.
+
+## Ray coverage
+
+### What it is
+
+How well each part of the model is sampled by the data. Regions that no ray crosses cannot be resolved, so recovery is only meaningful inside the covered region.
+
+### How it's calculated
+
+The current code uses a **proxy**: it doesn't trace rays, but marks a cell as covered if the inversion changed the model there.
+
+1. Take the absolute recovered perturbation $|I|$ (in %) on a depth slice.
+2. Average it over a moving window about one checker cell wide (21 × 21 km for the 20 km checker on the 1 km grid).
+3. Mark the cell **covered** where that local average exceeds 0.05 %.
+4. Drop the padded model edges.
+
+$$
+\text{frac\_covered} = \frac{\#\{\text{interior cells with } \overline{|I|}_{\text{window}} > 0.05\%\}}{\#\{\text{interior cells}\}}
+$$
+
+The same mask restricts where SSIM and the companion metrics below are computed.
+
+### What the number means
+
+| Output | Range | Meaning |
+|---|---|---|
+| `frac_covered` | 0–1 | Fraction of the map area at this depth that the inversion updated. 0.77 means 77 % of the slice was touched by the data; 0 means none of it. |
+
+### Limitations and planned improvement
+
+- Because it is built from the result, the mask can't separate "not sampled" from "sampled but the data asked for no change".
+- It doesn't distinguish crossing rays from many parallel rays, which resolve structure very differently.
+- A data-independent alternative is already sketched in [`forward_modeling.ipynb`](https://github.com/ajm-glitch/AlaskaTomography/blob/main/checkerboard_3D/forward_modeling.ipynb) (commented out): applying the adjoint of the linearized Eikonal operator to a vector of ones gives each cell's total ray sensitivity. Binning ray directions per cell would add a crossing-angle measure.
+
+### Example
+
+*To be added.*
+
+## SSIM (structural similarity)
+
+### What it is
+
+An image-comparison score [@wang2004] that asks whether the recovered slice has the **same pattern** as the true one, window by window. It is more sensitive to shape than a single correlation over the whole map.
+
+### How it's calculated
+
+For each small window (about one checker cell wide) at the same position in the true slice $T$ and the recovered slice $I$, SSIM compares three things:
+
+$$
+\text{SSIM} = \underbrace{\frac{2\mu_T\mu_I + C_1}{\mu_T^2 + \mu_I^2 + C_1}}_{\text{mean (luminance)}}
+\cdot \underbrace{\frac{2\sigma_T\sigma_I + C_2}{\sigma_T^2 + \sigma_I^2 + C_2}}_{\text{contrast (amplitude)}}
+\cdot \underbrace{\frac{\sigma_{TI} + C_2/2}{\sigma_T\sigma_I + C_2/2}}_{\text{structure (pattern)}}
+$$
+
+- $\mu$, $\sigma$, $\sigma_{TI}$ are the window means, standard deviations and covariance.
+- $C_1 = (0.01L)^2$ and $C_2 = (0.03L)^2$ are small stabilizers, with $L = 10$ (the −5 % to +5 % range of the anomaly).
+- The window values form a local SSIM map. The reported number is its mean over the covered region.
+
+Depths where the true pattern is flat are skipped. The checkerboard varies as $\cos(\pi z / L_{\text{checker}})$ with depth, so it is zero at nodal planes (for a 20 km checker, every other 10 km slice), and there is nothing to compare.
+
+### What the numbers mean
+
+| Output | Range | Meaning |
+|---|---|---|
+| `ssim_masked` | −1 to 1 | **Main score.** Mean SSIM inside the covered region. 1 = identical; 0 = no similarity; negative = pattern reversed (anomalies with flipped sign). |
+| `ssim_interior` | −1 to 1 | Same, over the whole model interior, so unsampled areas pull it toward 0. |
+| `ssim_amp_corrected` | −1 to 1 | SSIM after rescaling the recovered slice to the true amplitude. Isolates **pattern** recovery from amplitude loss: if this is much higher than `ssim_masked`, the shape is right but too weak. |
+| `pearson_r` | −1 to 1 | Correlation between true and recovered values inside the mask. Ignores amplitude. |
+| `recovery_ratio` | ≈ 0–1 | $\sum t\,i \,/\, \sum t^2$: fraction of the true amplitude recovered. 1 = full amplitude, 0.12 = 12 %. Typical for damped, smoothed inversions to be well below 1. |
+| `nrms` | ≥ 0 | $\lVert i - t \rVert / \lVert t \rVert$. 0 = perfect; 1 = no better than predicting no anomaly; above 1 = worse than that. |
+
+### Example
+
+*To be added.*

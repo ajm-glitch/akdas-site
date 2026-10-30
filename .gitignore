@@ -4,3 +4,4 @@ results/runs.json
 models/models.json
 **/*.quarto_ipynb
 __pycache__/
+results/field/runs.json
