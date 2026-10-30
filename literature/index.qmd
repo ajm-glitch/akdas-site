@@ -135,6 +135,34 @@ Published Alaska models and interpretations to compare our recovered structure a
 :::
 
 
+## Slab geometry
+
+Models of the top of the subducting slab, for checking the slab recovered by the inversion. @berg2020 (above) also finds the slab beneath southern Alaska deeper than earlier models.
+
+::: {.ak-paper}
+**@hayes2018** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1126/science.aat4723){.ak-link}
+
+[Slab2: global slab-geometry model. The Alaska–Aleutians region ("alu") gives gridded slab depth, dip, strike, thickness and uncertainty.]{.why}
+
+[Slab geometry]{.ak-tag} [Model]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@hayes2018data** [To read]{.pill .next} [Data ↗](https://www.sciencebase.gov/catalog/item/5aa2c535e4b0b1c392ea3ca2){.ak-link}
+
+[The Slab2 grids themselves (USGS data release). Download the Alaska–Aleutians files here.]{.why}
+
+[Slab geometry]{.ak-tag} [Data]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@martinshort2016** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1002/2016GL070580){.ak-link}
+
+[Teleseismic tomography of slab geometry beneath south-central Alaska and its relation to the Denali volcanic gap. No downloadable model found.]{.why}
+
+[Alaska]{.ak-tag} [Slab geometry]{.ak-tag}
+:::
+
 ## Resolution and checkerboard assessment
 
 ::: {.ak-paper}
