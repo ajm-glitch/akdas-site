@@ -2,7 +2,7 @@ title: First real-data inversion (DAS only, KKFLS + TERRA)
 date: "2026-11-03"
 data: DAS only
 cables: [KKFLS, TERRA]
-events: 400 USGS-cataloged events (2023-06-10 to 2023-12-31, M1.0–4.7), chosen by greedy ray coverage
+events: 400 events matched to ANSS ComCat locations (2023-06-10 to 2023-12-31, M1.0–4.7), chosen by greedy ray coverage
 phases: "P only (-par 2: Vp-only; S picks loaded but not used)"
 weighting: none (equal weights)
 start: AK112 (3D), interpolated onto the inversion grid
