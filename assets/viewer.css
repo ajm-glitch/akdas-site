@@ -72,3 +72,6 @@
 .akv-zoom { cursor: zoom-in; }
 @keyframes akv-fade { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .akv-overlay { animation: none; } }
+.akv-caveats { border: 1px solid var(--ak-warn); border-radius: 8px; padding: 10px 14px; font-size: .92rem; margin: 0 0 12px; }
+.akv-caveats b { color: var(--ak-warn); }
+.akv-caveats ul { margin: 4px 0 0; padding-left: 1.2rem; }

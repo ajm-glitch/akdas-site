@@ -9,9 +9,9 @@ include-in-header:
       <script src="../../assets/viewer.js"></script>
 ---
 
-No field-data inversions yet. Each run goes in its own folder in `results/field/runs/`, set up the same way as a checkerboard run (see [How to add results](../../adding-results.qmd)). The run shows up here with the same depth slider and comparison tools.
+Inversions of the real picks. Each run goes in its own folder in `results/field/runs/`, set up the same way as a checkerboard run (see [How to add results](../../adding-results.qmd)). There is no true model here, so each slice is shown on its own, with the Slab2 slab top drawn on it for reference.
 
-::: {data-akviewer="" data-src="runs.json" data-mode="run"}
+::: {data-akviewer="" data-src="runs.json" data-mode="run" data-truth="none"}
 :::
 
 ## Slab comparison
@@ -22,4 +22,4 @@ Compare the slab recovered by the inversion with independent estimates of its ge
 - Published Alaska models [@berg2020; @martinshort2016; @nayak2020] and the other papers under *Validating inversion results* on the [Literature](../../literature/index.qmd) page
 - The Wadati–Benioff zone traced by our own catalog seismicity
 
-*To be added once the first field-data inversion is run.*
+The depth slices and profiles of the first run already show the Slab2 slab top (green dashed line). A quantitative comparison is still to be added.

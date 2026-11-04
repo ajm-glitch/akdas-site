@@ -10,10 +10,14 @@
     ["radius_km", "Weighting radius", (v) => v + " km"],
     ["checker_km", "Checker size", (v) => v + " km"],
     ["anomaly_pct", "Anomaly", (v) => "±" + v + "%"],
+    ["events", "Events"],
+    ["phases", "Phases"],
     ["start_model", "Starting model", (v) => `<a href="../models/#${esc(v)}">${esc(v)}</a>`],
+    ["start", "Starting model"],
     ["picks", "Picks"],
     ["smoothing_km", "Smoothing", (v) => v + " km"],
     ["iterations", "Iterations"],
+    ["rms", "RMS residual"],
     ["date", "Date", (v) => (v ? esc(v) : "Not recorded")],
     ["source", "Source"],
   ];
@@ -57,9 +61,11 @@
   function mount(el) {
     const mode = el.dataset.mode || "run";
     const isRun = mode === "run";
+    // data-truth="none" (field data): no true-pattern panel and no checkerboard filters.
+    const noTruth = el.dataset.truth === "none";
     const state = { items: [], filter: "All", cur: null, cmp: "", depth: null, playing: null };
 
-    const filters = isRun
+    const filters = isRun && !noTruth
       ? [
           ["All", () => true],
           ["DAS only", (r) => r.data === "DAS only"],
@@ -122,7 +128,7 @@
     function slicePanels(r) {
       const d = String(state.depth);
       const panels = [];
-      if (isRun) {
+      if (isRun && !noTruth) {
         // Prefer the true pattern at this depth; otherwise a depth-less one; otherwise the nearest depth we have.
         let t = r.true && r.true[d], cap = `True pattern at ${d} km`;
         if (!t && r.true_any) { t = r.true_any; cap = "True pattern"; }
@@ -132,7 +138,7 @@
         }
         panels.push(t ? [t, cap] : [null, "True pattern not added"]);
       }
-      panels.push(r.slices[d] ? [r.slices[d], `${isRun ? "Recovered" : esc(r.title)} at ${d} km`] : [null, `No slice at ${d} km`]);
+      panels.push(r.slices[d] ? [r.slices[d], `${noTruth ? "Inverted model" : isRun ? "Recovered" : esc(r.title)} at ${d} km`] : [null, `No slice at ${d} km`]);
       if (state.cmp) {
         const c = byId(state.cmp);
         panels.push(c.slices[d] ? [c.slices[d], `${esc(c.title)} at ${d} km`] : [null, `${esc(c.title)}: no slice at ${d} km`]);
@@ -162,6 +168,7 @@
         <div><h2 id="${esc(r.id)}">${esc(r.title || r.id)}</h2><div class="akv-pills">${pills(r)}</div></div>
       </header>`;
       if (r.warning) h += `<div class="akv-warning" role="note"><b>Results not valid.</b> ${esc(r.warning).replace(/^These results are invalid\.\s*/, "")}</div>`;
+      if (r.caveats && r.caveats.length) h += `<div class="akv-caveats" role="note"><b>Caveats</b><ul>${r.caveats.map((c) => `<li>${esc(c)}</li>`).join("")}</ul></div>`;
       if (r.description) h += `<p class="akv-notes">${esc(r.description)}</p>`;
 
       if (r.depths.length) {

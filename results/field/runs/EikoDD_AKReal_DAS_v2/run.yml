@@ -1,0 +1,27 @@
+title: First real-data inversion (DAS only, KKFLS + TERRA)
+date: "2026-11-03"
+data: DAS only
+cables: [KKFLS, TERRA]
+events: 400 USGS-cataloged events (2023-06-10 to 2023-12-31, M1.0–4.7), chosen by greedy ray coverage
+phases: P only (-par 2)
+weighting: none (equal weights)
+start: AK112 (3D), interpolated onto the inversion grid
+smoothing_km: "≈21"
+iterations: 60
+rms: 0.481 s → 0.263 s (objective reduced to 0.30 of its initial value)
+source: "AlaskaTomography, real_data_inversion (run EikoDD_AKReal_DAS_v2)"
+status: done
+caveats:
+  - "Colour scale is ±20%, set automatically from the 99th percentile of the model, so it is four times wider than the ±5% used for checkerboards."
+  - "The slow streak under the KKFLS cable is likely a receiver-side artifact, not real structure."
+  - "Resolution is not verified yet: there is no checkerboard test with the same smoothing (sigma 9) yet."
+captions:
+  a_profile_se-nw.webp: SE–NW profile, with Slab2 slab top (green dashed) and catalog earthquakes
+  b_profile_sw-ne.webp: SW–NE profile, with Slab2 slab top (green dashed) and catalog earthquakes
+  c_ray_coverage.webp: Straight-ray hit count per 5 km block at six depths (white line = 500 rays)
+  d_residuals.webp: Initial vs final travel-time residuals
+  e_bfgs_convergence.webp: BFGS convergence (normalized objective vs iteration)
+notes: |
+  Depth slices show the velocity perturbation (dlnV) relative to the starting model, with the Slab2 slab-top contour at that depth (green dashed), the two profile lines, and the event epicentres.
+
+  Smoothing is sigma_smoo 9 grid cells on the 1 km grid, about 21 km full width at half maximum. 8,424 DAS channels (every other channel).
