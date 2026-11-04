@@ -11,6 +11,8 @@ iterations: 60
 rms: 0.481 s → 0.263 s (objective reduced by 70%; final/initial = 0.30)
 source: "AlaskaTomography, real_data_inversion (run EikoDD_AKReal_DAS_v2)"
 status: done
+description: |
+  How the 400 events were chosen: the pool is the 1,682 cleaned events with ANSS locations inside the checkerboard event box, at depths of 200 km or less, minus events with bad picks (none were excluded for this run). For each event, straight rays are drawn from the hypocenter to every channel with a good pick (every other channel, as in the inversion; P and S counted separately), and each (5 km cell, ray direction, phase) combination they cross is recorded. Events are then added greedily, each time picking the one that adds the most combinations not yet covered, until there are 400. Events with few picks or that repeat already-covered paths add little, so this favours many picks and crossing rays without separate filters. The 400 selected events cover 55,809 of the 58,188 combinations in the pool.
 caveats:
   - "Colour scale is ±20%, set automatically from the 99th percentile of the model, so it is four times wider than the ±5% used for checkerboards."
   - "The slow streak under the KKFLS cable is likely a receiver-side artifact, not real structure."
