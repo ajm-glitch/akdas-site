@@ -14,7 +14,6 @@ status: done
 caveats:
   - "Colour scale is ±20%, set automatically from the 99th percentile of the model, so it is four times wider than the ±5% used for checkerboards."
   - "The slow streak under the KKFLS cable is likely a receiver-side artifact, not real structure."
-  - "Resolution is not verified yet: there is no checkerboard test with the same smoothing (sigma 9) yet."
 captions:
   a_profile_se-nw.webp: SE–NW profile, with Slab2 slab top (green dashed) and catalog earthquakes
   b_profile_sw-ne.webp: SW–NE profile, with Slab2 slab top (green dashed) and catalog earthquakes
