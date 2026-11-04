@@ -3,12 +3,12 @@ date: "2026-11-03"
 data: DAS only
 cables: [KKFLS, TERRA]
 events: 400 USGS-cataloged events (2023-06-10 to 2023-12-31, M1.0–4.7), chosen by greedy ray coverage
-phases: P only (-par 2)
+phases: "P only (-par 2: Vp-only; S picks loaded but not used)"
 weighting: none (equal weights)
 start: AK112 (3D), interpolated onto the inversion grid
 smoothing_km: "≈21"
 iterations: 60
-rms: 0.481 s → 0.263 s (objective reduced to 0.30 of its initial value)
+rms: 0.481 s → 0.263 s (objective reduced by 70%; final/initial = 0.30)
 source: "AlaskaTomography, real_data_inversion (run EikoDD_AKReal_DAS_v2)"
 status: done
 caveats:
