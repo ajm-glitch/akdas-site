@@ -20,6 +20,5 @@ Compare the slab recovered by the inversion with independent estimates of its ge
 
 - **Slab2** depth contours for the Alaska–Aleutians region [@hayes2018; @hayes2018data]
 - Published Alaska models [@berg2020; @martinshort2016; @nayak2020] and the other papers under *Validating inversion results* on the [Literature](../../literature/index.qmd) page
-- The Wadati–Benioff zone traced by our own catalog seismicity
 
 The depth slices and profiles of the first run already show the Slab2 slab top (green dashed line). A quantitative comparison is still to be added.
