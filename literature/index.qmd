@@ -134,6 +134,38 @@ Published Alaska models and interpretations to compare our recovered structure a
 [Alaska]{.ak-tag} [Slab geometry]{.ak-tag}
 :::
 
+::: {.ak-paper}
+**@daly2021** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2021JB022809){.ak-link}
+
+[Relocated seismicity from the SALMON array beneath Cook Inlet and Kenai; Wadati–Benioff zone geometry to compare with our fast slab.]{.why}
+
+[Alaska]{.ak-tag} [Earthquakes]{.ak-tag} [Slab geometry]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@mann2022** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2021JB022697){.ak-link}
+
+[Scattered-wave imaging of the subducted Yakutat plateau beneath southcentral Alaska: thick slow crust on the slab top and slab Moho depth.]{.why}
+
+[Alaska]{.ak-tag} [Slab geometry]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@smith2020** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1785/0220190205){.ak-link}
+
+[Cook Inlet sedimentary basin and its seismic response; reference for the shallow slow anomaly beneath the cables.]{.why}
+
+[Alaska]{.ak-tag} [Crust]{.ak-tag}
+:::
+
+::: {.ak-paper}
+**@feng2019** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2019JB018122){.ak-link} [Model ↗](https://www.iris.edu/ds/products/emc-alaska-lfeng-2019_vsv_gamma/){.ak-link}
+
+[3D crust and uppermost-mantle Vs model of Alaska from surface waves, with a downloadable grid for direct comparison (crustal thickness, shallow Vs).]{.why}
+
+[Alaska]{.ak-tag} [Velocity model]{.ak-tag} [Surface waves]{.ak-tag}
+:::
+
 
 ## Slab geometry
 
