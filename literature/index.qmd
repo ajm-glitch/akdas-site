@@ -137,7 +137,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 ::: {.ak-paper}
 **@daly2021** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2021JB022809){.ak-link}
 
-[Relocated seismicity from the SALMON array beneath Cook Inlet and Kenai; Wadati–Benioff zone geometry to compare with our fast slab.]{.why}
+[Dense-array seismicity beneath the Wrangell volcanic field, east of our box. Main use for us: it finds AEC/ComCat depths biased shallow by the SCAK 1D model (and cites the same beneath Kenai).]{.why}
 
 [Alaska]{.ak-tag} [Earthquakes]{.ak-tag} [Slab geometry]{.ak-tag}
 :::
@@ -145,7 +145,7 @@ Published Alaska models and interpretations to compare our recovered structure a
 ::: {.ak-paper}
 **@mann2022** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1029/2021JB022697){.ak-link}
 
-[Scattered-wave imaging of the subducted Yakutat plateau beneath southcentral Alaska: thick slow crust on the slab top and slab Moho depth.]{.why}
+[Receiver-function imaging of the subducted Yakutat plateau east of about 150°W (edge of our box): Yakutat crust thickness, and a thin (1–5 km) low-velocity layer at the plate interface.]{.why}
 
 [Alaska]{.ak-tag} [Slab geometry]{.ak-tag}
 :::
