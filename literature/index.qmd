@@ -166,6 +166,14 @@ Published Alaska models and interpretations to compare our recovered structure a
 [Alaska]{.ak-tag} [Velocity model]{.ak-tag} [Surface waves]{.ak-tag}
 :::
 
+::: {.ak-paper}
+**@kim2014** [To read]{.pill .next} [Paper ↗](https://doi.org/10.1002/2013JB010581){.ak-link}
+
+[Receiver-function imaging of the megathrust and the Yakutat/Pacific plate interface beneath the Kenai Peninsula and Cook Inlet (MOOS array); the slab-top structure inside our box.]{.why}
+
+[Alaska]{.ak-tag} [Slab geometry]{.ak-tag} [Receiver functions]{.ak-tag}
+:::
+
 
 ## Slab geometry
 
