@@ -13,6 +13,8 @@ folder are sorted automatically by file name:
       -> true pattern at that depth
   - a name starting with "true" and no depth (true_checkerboard.png)
       -> true pattern used at every depth
+  - a depth image with "vp" as a separate word (vp_z020km.png, inverted_vp_20km.png)
+      -> absolute-velocity slice at that depth (the viewer adds a toggle)
   - anything else (profiles, residuals, GIFs)
       -> "Other figures", captioned from the file name
 """
@@ -29,6 +31,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 IMAGE_EXT = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"}
 DEPTH_RE = re.compile(r"(\d+(?:\.\d+)?)\s*km", re.IGNORECASE)
+VP_RE = re.compile(r"(^|[_\-\s])vp([_\-\s]|$)", re.IGNORECASE)
 
 
 def depth_of(name: str) -> float | None:
@@ -53,6 +56,7 @@ def scan(folder: Path, meta_name: str, url_prefix: str) -> dict | None:
     meta = yaml.safe_load(meta_file.read_text()) or {}
 
     slices: dict = {}
+    slices_vp: dict = {}
     true_slices: dict = {}
     true_any = None
     other = []
@@ -68,7 +72,7 @@ def scan(folder: Path, meta_name: str, url_prefix: str) -> dict | None:
             else:
                 true_slices[num(d)] = url
         elif d is not None and img.suffix.lower() != ".gif":
-            slices[num(d)] = url
+            (slices_vp if VP_RE.search(Path(img.name).stem) else slices)[num(d)] = url
         else:
             other.append({"src": url, "caption": caption_of(img.name)})
 
@@ -99,8 +103,9 @@ def scan(folder: Path, meta_name: str, url_prefix: str) -> dict | None:
     return {
         "id": folder.name,
         **meta,
-        "depths": sorted(set(slices) | set(true_slices)),
+        "depths": sorted(set(slices) | set(slices_vp) | set(true_slices)),
         "slices": {str(k): v for k, v in sorted(slices.items())},
+        "slices_vp": {str(k): v for k, v in sorted(slices_vp.items())} or None,
         "true": {str(k): v for k, v in sorted(true_slices.items())},
         "true_any": true_any,
         "other": other,

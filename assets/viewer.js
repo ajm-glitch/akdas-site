@@ -63,7 +63,10 @@
     const isRun = mode === "run";
     // data-truth="none" (field data): no true-pattern panel and no checkerboard filters.
     const noTruth = el.dataset.truth === "none";
-    const state = { items: [], filter: "All", cur: null, cmp: "", depth: null, playing: null };
+    const state = { items: [], filter: "All", cur: null, cmp: "", depth: null, playing: null, qty: "slices" };
+    // Runs with absolute-velocity slices (slices_vp) get a toggle between % change and Vp.
+    const QTY = [["slices", "% change (dlnV)"], ["slices_vp", "Absolute Vp"]];
+    const field = (r) => (state.qty === "slices_vp" && r.slices_vp ? r.slices_vp : r.slices);
 
     const filters = isRun && !noTruth
       ? [
@@ -122,7 +125,7 @@
     }
 
     function preload(r) {
-      Object.values(r.slices).concat(Object.values(r.true || {})).forEach((src) => { const i = new Image(); i.src = src; });
+      Object.values(r.slices).concat(Object.values(r.slices_vp || {}), Object.values(r.true || {})).forEach((src) => { const i = new Image(); i.src = src; });
     }
 
     function slicePanels(r) {
@@ -138,10 +141,12 @@
         }
         panels.push(t ? [t, cap] : [null, "True pattern not added"]);
       }
-      panels.push(r.slices[d] ? [r.slices[d], `${noTruth ? "Inverted model" : isRun ? "Recovered" : esc(r.title)} at ${d} km`] : [null, `No slice at ${d} km`]);
+      const own = field(r), what = noTruth ? (own === r.slices_vp ? "Inverted Vp" : "Inverted model, % change") : isRun ? "Recovered" : esc(r.title);
+      panels.push(own[d] ? [own[d], `${what} at ${d} km`] : [null, `No slice at ${d} km`]);
       if (state.cmp) {
         const c = byId(state.cmp);
-        panels.push(c.slices[d] ? [c.slices[d], `${esc(c.title)} at ${d} km`] : [null, `${esc(c.title)}: no slice at ${d} km`]);
+        const cs = field(c);
+        panels.push(cs[d] ? [cs[d], `${esc(c.title)} at ${d} km`] : [null, `${esc(c.title)}: no slice at ${d} km`]);
       }
       return panels.map(([src, cap]) => `<figure class="akv-fig">${src
         ? `<a href="${src}" class="akv-zoom" data-caption="${esc(cap)}"><img src="${src}" alt="${esc(cap)}"></a>`
@@ -178,6 +183,7 @@
             <button class="akv-play" aria-label="Play through depths">${state.playing ? "❚❚" : "▶"}</button>
             <label class="akv-depth-label" for="akv-depth-${mode}">Depth <b class="akv-depth-val">${state.depth} km</b></label>
             <input id="akv-depth-${mode}" type="range" min="0" max="${r.depths.length - 1}" step="1" value="${i}" ${r.depths.length < 2 ? "disabled" : ""}>
+            ${r.slices_vp ? `<span class="akv-qty" role="group" aria-label="Quantity">${QTY.map(([k, n]) => `<button class="akv-chip" data-qty="${k}" aria-pressed="${state.qty === k}">${n}</button>`).join("")}</span>` : ""}
             ${others.length ? `<label class="akv-cmp">Compare with <select id="akv-cmp-${mode}"><option value="">none</option>${others.map((o) => `<option value="${esc(o.id)}" ${o.id === state.cmp ? "selected" : ""}>${esc(o.title || o.id)}</option>`).join("")}</select></label>` : ""}
           </div>
         </div>
@@ -214,6 +220,11 @@
             setDepth(r.depths[j]);
           }, 900);
         };
+        $d.querySelectorAll(".akv-qty button").forEach((b) => (b.onclick = () => {
+          state.qty = b.dataset.qty;
+          $d.querySelectorAll(".akv-qty button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+          renderSlices();
+        }));
         const cmp = $d.querySelector("select");
         if (cmp) cmp.onchange = () => { state.cmp = cmp.value; if (state.cmp) preload(byId(state.cmp)); renderSlices(); };
       }
