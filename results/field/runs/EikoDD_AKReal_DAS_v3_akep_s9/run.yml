@@ -16,14 +16,15 @@ description: |
 caveats:
   - "Colour scale is set automatically from the 99th percentile of |dlnV| in the resolved area; read the limit from the colour bar."
   - "Resolution is not verified yet: there is no checkerboard test with the same smoothing (sigma 9) yet."
-  - "Absolute Vp plots for this run are not added yet."
 captions:
   a_profile_se-nw.webp: SE–NW profile, % change (dlnV), with Slab2 slab top (green dashed) and catalog earthquakes
+  b_profile_se-nw_vp.webp: SE–NW profile, absolute Vp
   c_profile_sw-ne.webp: SW–NE profile, % change (dlnV), with Slab2 slab top (green dashed) and catalog earthquakes
+  d_profile_sw-ne_vp.webp: SW–NE profile, absolute Vp
   e_ray_coverage.webp: Straight-ray hit count per 5 km block at six depths (white line = 500 rays); the same as v2, since the events and picks are the same
   f_residuals.webp: Initial vs final travel-time residuals
   g_bfgs_convergence.webp: BFGS convergence (normalized objective vs iteration)
 notes: |
   Same setup as v2 except the starting model: AKEP2020 instead of AK112. Because dlnV is the % change from each run's own starting model, the dlnV slices of v2 and v3 are relative to different references.
 
-  Depth slices show dlnV with the Slab2 slab-top contour at that depth (green dashed), the two profile lines and the event epicentres. The black outline marks the resolved area; outside it the model is drawn in darkened colours. Smoothing is sigma_smoo 9 grid cells on the 1 km grid, about 21 km full width at half maximum.
+  Depth slices show either dlnV or the absolute P velocity (Vp, km/s); switch with the buttons above the slice. Each shows the Slab2 slab-top contour at that depth (green dashed), the two profile lines and the event epicentres. The black outline marks the resolved area; outside it the model is drawn in darkened colours. Smoothing is sigma_smoo 9 grid cells on the 1 km grid, about 21 km full width at half maximum.
