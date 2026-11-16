@@ -1,0 +1,30 @@
+title: Real-data inversion v4 (AKAN2020 starting model)
+date: "2026-11-14"
+data: DAS only
+cables: [KKFLS, TERRA]
+events: 400 events matched to ANSS ComCat locations (2023-06-10 to 2023-12-31, M1.0–4.7), chosen by greedy ray coverage; same events and picks as v2 and v3
+phases: "P only (-par 2: Vp-only; S picks loaded but not used)"
+weighting: none (equal weights)
+start: AKAN2020 (3D statewide; Nayak et al. 2020), interpolated onto the inversion grid
+smoothing_km: "≈21"
+iterations: 60
+rms: 0.472 s → 0.270 s (objective reduced by 67%; final/initial = 0.33)
+source: "AlaskaTomography, real_data_inversion (run EikoDD_AKReal_DAS_v4_akan_s9)"
+status: done
+description: |
+  How the 400 events were chosen: the pool is the 1,682 cleaned events with ANSS locations inside the checkerboard event box, at depths of 200 km or less, minus events with bad picks (none were excluded for this run). For each event, straight rays are drawn from the hypocenter to every channel with a good pick (every other channel, as in the inversion; P and S counted separately), and each (5 km cell, ray direction, phase) combination they cross is recorded. Events are then added greedily, each time picking the one that adds the most combinations not yet covered, until there are 400. Events with few picks or that repeat already-covered paths add little, so this favours many picks and crossing rays without separate filters. The 400 selected events cover 55,809 of the 58,188 combinations in the pool.
+caveats:
+  - "Colour scale is set automatically from the 99th percentile of |dlnV| in the resolved area; read the limit from the colour bar."
+  - "Resolution is not verified yet: there is no checkerboard test with the same smoothing (sigma 9) yet."
+captions:
+  a_profile_se-nw.webp: SE–NW profile, % change (dlnV), with Slab2 slab top (green dashed) and catalog earthquakes
+  b_profile_se-nw_vp.webp: SE–NW profile, absolute Vp
+  c_profile_sw-ne.webp: SW–NE profile, % change (dlnV), with Slab2 slab top (green dashed) and catalog earthquakes
+  d_profile_sw-ne_vp.webp: SW–NE profile, absolute Vp
+  e_ray_coverage.webp: Straight-ray hit count per 5 km block at six depths (white line = 500 rays); the same as v2 and v3, since the events and picks are the same
+  f_residuals.webp: Initial vs final travel-time residuals
+  g_bfgs_convergence.webp: BFGS convergence (normalized objective vs iteration)
+notes: |
+  Same setup as v2 and v3 except the starting model: AKAN2020 (v2 used AK112, v3 AKEP2020). Because dlnV is the % change from each run's own starting model, the dlnV slices of v2, v3 and v4 are relative to different references.
+
+  Depth slices show either dlnV or the absolute P velocity (Vp, km/s); switch with the buttons above the slice. Each shows the Slab2 slab-top contour at that depth (green dashed), the two profile lines and the event epicentres. The black outline marks the resolved area; outside it the model is drawn in darkened colours. Smoothing is sigma_smoo 9 grid cells on the 1 km grid, about 21 km full width at half maximum.
