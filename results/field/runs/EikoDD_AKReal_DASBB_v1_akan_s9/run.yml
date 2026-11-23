@@ -10,7 +10,6 @@ start: AKAN2020 (3D statewide; Nayak et al. 2020), interpolated onto the inversi
 smoothing_km: "≈21"
 iterations: 60
 rms: "objective reduced by about 89% (final/initial ≈ 0.105)"
-confirm: true
 source: "AlaskaTomography, real_data_inversion (run EikoDD_AKReal_DASBB_v1_akan_s9)"
 status: done
 caveats:
