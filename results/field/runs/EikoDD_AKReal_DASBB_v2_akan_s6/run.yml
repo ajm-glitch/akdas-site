@@ -1,0 +1,31 @@
+title: Real-data inversion DAS + BB v2 (AKAN2020, weighted, sigma 6)
+date: "2026-11-23"
+data: DAS + BB
+cables: [KKFLS, TERRA]
+stations: DAS channels plus 32 broadband stations inside the model grid (of 102 available)
+events: 400 events, re-selected by greedy ray coverage after excluding 6 events with bad picks. Locations and origin times from a joint DAS + BB relocation for 386 events; ANSS ComCat for the other 14.
+phases: "P only (-par 2: Vp-only; S picks loaded but not used)"
+weighting: "1/sigma per pick. Broadband sigma from the calibrated pick uncertainties; DAS sigma from the remapped pick uncertainties, with along-fiber error correlation (ℓ = 40 m for P, 42 m for S, shared fraction 0.5) folded into diagonal row-sum weights"
+start: AKAN2020 (3D statewide; Nayak et al. 2020), interpolated onto the inversion grid
+smoothing_km: "≈14"
+iterations: 60
+rms: "2.080 s → 0.612 s (objective reduced by 91%; final/initial = 0.087)"
+source: "AlaskaTomography, real_data_inversion (run EikoDD_AKReal_DASBB_v2_akan_s6)"
+status: done
+caveats:
+  - "Not directly comparable to v4 in the objective: v4 used equal weights and this run uses 1/sigma weights, so the objective is in different units."
+  - "Event locations differ from v2–v4: the joint DAS + BB relocations are on average about 1.5 s earlier in origin time and about 5 km deeper than ANSS."
+  - "Resolution is not verified yet: there is no checkerboard test with the same smoothing (sigma 6) and DAS + BB geometry."
+captions:
+  a_profile_se-nw.webp: SE–NW profile, % change (dlnV), with Slab2 slab top (green dashed) and catalog earthquakes
+  b_profile_se-nw_vp.webp: SE–NW profile, absolute Vp
+  c_profile_sw-ne.webp: SW–NE profile, % change (dlnV), with Slab2 slab top (green dashed) and catalog earthquakes
+  d_profile_sw-ne_vp.webp: SW–NE profile, absolute Vp
+  e_ray_coverage.webp: Straight-ray hit count per 5 km block at six depths (white line = 500 rays)
+  f_residuals.webp: Initial vs final travel-time residuals
+  g_bfgs_convergence.webp: BFGS convergence (normalized objective vs iteration)
+  h_ell_fit.webp: Fit of the DAS pick-error correlation against channel separation, used to set the along-fiber correlation length
+notes: |
+  Same as DAS + BB v1 (same events, locations, picks and weights) except the smoothing: sigma_smoo 6 instead of 9, about 14 km instead of 21 km full width at half maximum.
+
+  Depth slices show either the % change in velocity from the starting model (dlnV) or the absolute P velocity (Vp, km/s); switch with the buttons above the slice. Each shows the Slab2 slab-top contour at that depth (green dashed), the two profile lines, the event epicentres and the broadband stations (orange triangles). The black outline marks the resolved area; outside it the model is drawn in darkened colours. ell_fit shows the fit of the DAS pick-error correlation used to set the correlation length.

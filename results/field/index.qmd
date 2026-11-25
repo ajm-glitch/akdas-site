@@ -11,6 +11,8 @@ include-in-header:
 
 Inversions of the real picks. Each run goes in its own folder in `results/field/runs/`, set up the same way as a checkerboard run (see [How to add results](../../adding-results.qmd)). There is no true model here, so each slice is shown on its own, with the Slab2 slab top drawn on it for reference.
 
+**Colours in the % change (dlnV) maps:** the plots made so far use the `vik` colour map unreversed, so **blue is slower** and **red is faster** than the starting model. That is the opposite of the absolute Vp maps (red = slow, blue = fast) and of the usual convention. Plots regenerated after the colour fix will follow the usual convention.
+
 ::: {data-akviewer="" data-src="runs.json" data-mode="run" data-truth="none"}
 :::
 
