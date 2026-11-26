@@ -11,7 +11,7 @@ include-in-header:
 
 Inversions of the real picks. Each run goes in its own folder in `results/field/runs/`, set up the same way as a checkerboard run (see [How to add results](../../adding-results.qmd)). There is no true model here, so each slice is shown on its own, with the Slab2 slab top drawn on it for reference.
 
-**Colours in the % change (dlnV) maps:** DAS + BB v2 uses the usual convention, **red = slower** and **blue = faster** than the starting model, like the absolute Vp maps. The older runs' dlnV maps have the colours reversed (**blue = slower**, red = faster) until they are regenerated.
+**Colours in the % change (dlnV) maps:** Both DAS + BB runs (v1 and v2) use the usual convention, **red = slower** and **blue = faster** than the starting model, like the absolute Vp maps. The DAS-only runs' (v2, v3, v4) dlnV maps have the colours reversed (**blue = slower**, red = faster) until they are regenerated.
 
 ::: {data-akviewer="" data-src="runs.json" data-mode="run" data-truth="none"}
 :::
